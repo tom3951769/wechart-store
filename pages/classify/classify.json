@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "搜索",
+  "backgroundColor": "#FFFFFF",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "search-tab": "../../components/search-tab/search-tab",
+    "searchcommodity-item": "../../components/searchcommodity-item/searchcommodity-item"
+  },
+  "onReachBottomDistance": 0
+}

@@ -1,0 +1,139 @@
+/**app.wxss**/
+
+.button-name
+{
+  font-size: 22rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(35,35,33,1);
+  float: left;
+  left: 0;
+  height: 40rpx;
+}
+.button-view1
+{
+  display: flex;
+  flex-direction:row;
+  align-items: center; 
+}
+.button-text
+{
+  margin-right: 20rpx;
+  text-align: right;
+  font-size: 24rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(102,102,102,1);
+}
+.button-image
+{
+  float: right;
+  right: 0;
+  height:29rpx;
+  width: 18rpx;
+}
+.button-right
+{
+  display: flex;
+  flex-direction:row;
+  align-items: center; 
+}
+.button-view
+{
+  margin-left:5%; 
+  margin-right:5%;
+  height: 100rpx;
+  font-size:28rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(35,35,33,1);
+  background-color: white;
+  border-radius: 0rpx;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: center; 
+  border-bottom: 1rpx solid #F1F2F4;
+}
+.mylikecommodityinfo-price-text
+{
+  font-size: 28rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(35,35,33,1);
+}
+.mylikecommodityinfo-price-view
+{
+  margin-top:2%; 
+  height: 50rpx;
+  text-align: left;
+}
+.mylikecommodityinfo-originalprice-view
+{
+  margin-left: 5%;
+  display: inline;
+  color: #A0A0A0;
+  text-decoration:line-through;
+}
+.mylikecommodityinfo-price-text-icon
+{
+  font-size: 22rpx;
+  color:#181818;
+  font-family:PingFang-SC-Medium;
+}
+.mylikecommodityinfo-text-view
+{
+  width: 425rpx;
+  font-size:26rpx;
+  font-family:PingFang-SC-Medium;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+.fillnblock {
+  height: 19rpx;
+  background: #f4f4f4;
+} 
+.btn {
+  position: fixed;
+  bottom:10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3rpx;
+  font-size: 24rpx;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #232321;
+  width: 730rpx;
+  height: 80rpx;
+}
+
+/*  重写 checkbox 样式  */
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input{
+  border-radius:0;
+  width: 30rpx; /* 背景的宽 */
+   height: 30rpx; /* 背景的高 */
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: none;
+   background: black
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   width: 30rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 30rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   text-align: center;
+   font-size:30rpx; /* 对勾大小 30rpx */
+   color:#fff; /* 对勾颜色 白色 */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}

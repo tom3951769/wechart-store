@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "购物车",
+  "enablePullDownRefresh": false,
+  "onReachBottomDistance": 0,
+  "usingComponents": {
+    "shoppingcart-item": "../../components/shoppingcart-item/shoppingcart-item"
+  }
+}

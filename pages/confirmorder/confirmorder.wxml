@@ -1,0 +1,99 @@
+<view class='body'>
+  <view class='bg-row1-item' wx:if="{{json.address_id!=''}}" bindtap='onSelectedAddress' data-item="{{json}}">
+    <image class="bg-row1" src="/pages/images/addressicon.png" mode='aspectFill'></image>
+    <view class='bg-row2'>
+      <view class='bg-row2-row1'>
+        <text>{{json.contacts}}</text>
+        <text style='margin-left: 40rpx;'>{{json.mobile}}</text>
+        <view class='default-text-checked-view' wx:if="{{json.isdefult==true}}">
+          <label class='default-text-checked'> 默认 </label>
+        </view>
+      </view>
+      <view class='bg-row2-row2'>
+        <text>{{json.address}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='bg-row1-item1' wx:else bindtap='toAddressAdd'>
+    <image class='bg-row1-item1-img' src='/pages/images/addressnull.png' mode='aspectFit'></image>
+    <text>您还没有收货地址，点击这里添加地址</text>
+  </view>
+  <view class='dashed'></view>
+  <view class='fillnblock'></view>
+  <view class="button-view">
+    <text class='button-name'>身分证号</text>
+    <view class="button-view1">
+      <text wx:if='isShowText' class='button-text'>{{json.contacts_id_num}}</text>
+      <image class='button-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFit'></image>
+    </view>
+  </view>
+  <view class='fillnblock'></view>
+  <view class='bg-item'>
+    <view class='confirmorder-view'>
+      <scroll-view scroll-x='true'>
+        <view class='confirmorder-scroll-view'>
+          <view class='brand' wx:for="{{json.product_list}}" wx:key="product_id">
+            <image class='confirmorder-scroll-view-item' src='{{item.product_img}}' mode='aspectFit' bindtap='ontoNavigateUrl' data-items='{{item}}'></image>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='productcount-view'>
+      <text class='button-text'>共{{json.product_count}}件</text>
+      <image class='button-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFit'></image>
+    </view>
+  </view>
+  <view class='fillnblock'></view>
+  <view class="button-view">
+    <view class='button-name-view'>
+      <text class='button-name'>优惠卷</text>
+      <text class="button-name-text">{{json.coupon_count}}张可用</text>
+    </view>
+    <view class="button-view1">
+      <text wx:if='isShowText' class='button-text' bindtap='showCoupon'>{{coupontext}}</text>
+      <image class='button-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFit'></image>
+    </view>
+  </view>
+  <view class="button-view" bindtap='ontoNavigateUrl' data-items='{{item}}'>
+    <view class='button-name-view'>
+      <text class='button-name'>代金卷</text>
+      <text class="button-name-text">{{json.cash_coupon_count}}张可用</text>
+    </view>
+    <view class="button-view1">
+      <text wx:if='isShowText' class='button-text' bindtap='showVoucher'>{{vouchertext}}</text>
+      <image class='button-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFit'></image>
+    </view>
+  </view>
+  <view class='fillnblock'></view>
+  <view class="button-view" bindtap='ontoNavigateUrl' data-items='{{item}}'>
+    <text class='button-name'>商品金额</text>
+    <view class="button-view1">
+      <text wx:if='isShowText' class='button-text1'>￥{{json.product_price}}</text>
+    </view>
+  </view>
+  <view class="button-view" bindtap='ontoNavigateUrl' data-items='{{item}}'>
+    <text class='button-name'>运费</text>
+    <view class="button-view1">
+      <text wx:if='isShowText' class='button-text1'>+￥{{json.freight}}</text>
+    </view>
+  </view>
+  <view class="button-view" bindtap='ontoNavigateUrl' data-items='{{item}}'>
+    <text class='button-name'>优惠</text>
+    <view class="button-view1">
+      <text wx:if='isShowText' class='button-text1'>-￥{{discount}}</text>
+    </view>
+  </view>
+  <view class="detail-nav" hidden='{{ isRedact }}'>
+    <view class='car-view'>
+      <view class='total-price-view'>
+        <text style='font-size:24rpx;width:60rpx;'>合计</text>
+        <text style='font-size:16rpx;'>:</text>
+        <text style='font-size:16rpx;'>￥</text>
+        <text style='font-size:34rpx;'>{{json.total_price-discount}}</text>
+      </view>
+    </view>
+    <button class="button-black" bindtap="immeBuy" formType="submit">立即结算({{json.product_count}})</button>
+  </view>
+  <coupon-item-bottom items="{{couponlist}}" isuse="{{isuse_coupon}}" typenumber="1"  wx:if="{{isshowcoupon}}"  bindonAffirm='onAffirm'  bindonSeletedCoupon="onSeletedCoupon" bindonIsUse="onIsUse"/>
+  <coupon-item-bottom items="{{voucherlist}}" isuse="{{isuse_cach_coupon}}"  typenumber="2" wx:if="{{isshowvoucher}}" bindonAffirm='onAffirm' bindonSeletedCoupon="onSeletedCoupon" bindonIsUse="onIsUse"/>
+</view>

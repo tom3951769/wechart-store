@@ -1,0 +1,6 @@
+<view class="flaot-container">
+  <float-tab items="{{tabs}}" curTabId="{{curTabId}}" fixedBar="{{isShowFloatTab}}" bindtabclick="clickTab" />
+  <scroll-view scroll-y='true'>
+     <conpon-item items="{{coupons}}" />
+  </scroll-view>
+</view>

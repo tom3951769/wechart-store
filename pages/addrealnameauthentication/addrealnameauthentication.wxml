@@ -1,0 +1,32 @@
+<view>
+  <text style='font-size: 30rpx;margin-left:5%;'>身份信息</text>
+  <input class='name-input' placeholder='您的真实姓名'></input>
+  <input class='idcard-input' placeholder='您的身份证号码（将加密处理）'></input>
+</view>
+<view>
+  <text style='font-size: 30rpx;margin-left:5%;'>身份证正反面</text>
+  <view class='body'>
+    <view class='idcard-view' bindtap='toCameraPositive'>
+      <image class='idcard-image' wx:if="{{idcardFilePaths.positive!=null}}" src='{{idcardFilePaths.positive}}' mode='aspectFit'></image>
+      <image wx:if="{{idcardFilePaths.positive==null}}" class='idcard-view-item-bg' src='/pages/images/realidcardbg1.png '></image>
+      <image wx:if="{{idcardFilePaths.positive==null}}" class='idcard-view-item' src='/pages/images/realidcardbgicon.png'></image>
+    </view>
+    <view class='idcard-view' bindtap='toCameraContrary'>
+      <image class='idcard-image' wx:if="{{idcardFilePaths.contrary!=null}}" src='{{idcardFilePaths.contrary}}' mode='aspectFit'></image>
+      <image wx:if="{{idcardFilePaths.contrary==null}}" class='idcard-view-item-bg' src='/pages/images/realidcardbg2.png '></image>
+      <image wx:if="{{idcardFilePaths.contrary==null}}" class='idcard-view-item' src='/pages/images/realidcardbgicon.png'></image>
+    </view>
+  </view>
+  <view class='tips'>
+    <text>温馨提示:请上传原始比例的身份证正反面,请忽剪裁涂改，保证身份证清晰否则无法通过</text>
+    <view class='tips-title'>
+      <text>为什么需要实名认证</text>
+    </view>
+    <view class='tips1-title'>
+      <text>根据海关相关规定，购买跨境商品需要办理清关手续，请您配合进行实名认证，以确保您购买的商品顺利通过海关检查
+实名认证规则：购买跨境商品需填写注册人的真实姓名及身份证号码部分商品下单时需提供收货人的真实信息（包含身份证照片），具体以下单提示为准
+</text>
+    </view>
+  </view>
+<view class="btn" bindtap="hiddeAddToShoppingCart">保存</view>
+</view>

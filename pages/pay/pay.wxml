@@ -1,0 +1,25 @@
+<!--pages/pay/pay.wxml-->
+<view class='fillnblock'></view>
+<view class='order-bg'>
+  <view class='order-view'>
+    <text class='price-title'>订单金额</text>
+    <view class='price-view'>
+      <text class='price-unit'>￥</text>
+      <text>{{json.pay_money}}</text>
+    </view>
+  </view>
+</view>
+<view class='fillnblock'></view>
+<view class='order-bg'>
+  <view class="button-view" wx:for="{{items}}" bindtap='toNavigateUrl' id='{{item.id}}' data-items='{{item}}'>
+    <view class='button-name-view'>
+      <image class='pay-icon' src='{{item.iconurl}}' mode='aspectFill'></image>
+      <text class='button-name'>{{item.nodeName}}</text>
+    </view>
+    <view class="button-view1">
+      <text wx:if='isShowText' class='button-text'>{{item.text}}</text>
+      <checkbox checked='{{item.isSelected}}' bindtap='onSelected' data-item="{{item}}"></checkbox>
+    </view>
+  </view>
+</view>
+<view class="btn" bindtap="onPay">立即支付</view>

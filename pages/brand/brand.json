@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "热门品牌",
+    "usingComponents": {
+      "searchcommodity-item": "../../components/searchcommodity-item/searchcommodity-item"
+    }
+}

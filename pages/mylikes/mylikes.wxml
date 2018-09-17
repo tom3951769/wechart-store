@@ -1,0 +1,28 @@
+<view>
+  <scroll-view>
+    <view style='background-color: white;'>
+      <view class='touch-left' wx:for="{{list}}" wx:key="">
+        <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove">
+          <view class='mylikecommodityinfo'>
+            <image class='mylikecommodityinfo-image' src='{{item.product_img}}' mode='aspectFit' bindtap='toCommodity' data-id="{{item.product_id}}"></image>
+            <view class='mylikecommodityinfo-view'>
+              <view class='mylikecommodityinfo-text-view' bindtap='toCommodity' data-id="{{item.product_id}}">
+                <text class='mylikecommodityinfo-text'>{{item.product_name}}</text>
+              </view>
+              <view class="mylikecommodityinfo-price-view">
+                <text class='mylikecommodityinfo-price-text-icon' bindtap='toCommodity' data-id="{{item.product_id}}">￥</text>
+                <text class='mylikecommodityinfo-price-text' bindtap='toCommodity' data-id="{{item.product_id}}">{{item.price}}</text>
+                <view class="mylikecommodityinfo-originalprice-view" wx:if="{{item.original_price>0}}" bindtap='toCommodity' data-id="{{item.product_id}}">
+                  <text style='font-size: 20rpx;color: #A0A0A0;'>￥</text>
+                  <text style='font-size: 26rpx;color: #A0A0A0;'>{{item.original_price}}</text>
+                </view>
+                <image class='mylikecommodityinfo-icon' bindtap='addcard' data-item="{{item.product_id}}" src='/pages/images/mylikecommodityinfoicon.jpg' mode='aspectFill'></image>
+              </view>
+            </view>
+          </view>
+          <view class="del" catchtap="onDelete" data-index="{{index}}">删除</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

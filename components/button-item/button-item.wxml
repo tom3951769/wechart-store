@@ -1,0 +1,8 @@
+<!--components/button-item.wxml-->
+<view class="button-view" wx:for="{{items}}" bindtap='ontoNavigateUrl'  data-items='{{item}}'>
+  <text class='button-name'>{{item.nodeName}}</text>
+  <view class="button-view1">
+    <text wx:if='isShowText' class='button-text'>{{item.text}}</text>
+    <image class='button-image' src='/pages/images/myselficon5.png' mode='aspectFill'></image>
+  </view>
+</view>

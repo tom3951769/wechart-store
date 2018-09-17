@@ -1,0 +1,15 @@
+<!--components/searchcommodity-item/searchcommodity-item.wxml-->
+<view class='searchcommodity-bg'>
+  <view class='searchcommodity-view' wx:for='{{items}}' wx:key='{{item.product_id}}' data-item="{{item}}" bindtap='onClick'>
+    <image class='searchcommodity-image' src='{{item.product_img}}' mode='aspectFit'></image>
+    <text class='searchcommodity-description'>{{item.product_name}}</text>
+    <view class="mylikecommodityinfo-price-view">
+      <text class='mylikecommodityinfo-price-text-icon'>￥</text>
+      <text class='mylikecommodityinfo-price-text'>{{item.price}}</text>
+      <view class="mylikecommodityinfo-originalprice-view" wx:if="{{item.original_price>0}}">
+        <text style='font-size: 26rpx;color: #A0A0A0;'>￥</text>
+        <text style='font-size: 26rpx;color: #A0A0A0;'>{{item.original_price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

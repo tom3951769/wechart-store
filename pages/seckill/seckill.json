@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Happy Hour",
+    "usingComponents": {
+      "commodity-item": "../../components/commodity-item/commodity-item"
+    }
+}

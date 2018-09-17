@@ -1,0 +1,48 @@
+<!-- 加入购物车 -->
+<view id="payDialog" class="page-dialog-wrap" hidden="{{fixedBar}}">
+  <view class='payDialog-bg'></view>
+  <view class="page-bottom-dialog">
+    <view class="page-bottom-content">
+      <view class="page-dialog-close" bindtap="onCancel">×</view>
+      <view class="dialog-block-item1">
+        <view class="thumb">
+          <view class="thumb-wrap">
+            <image class="pay-goods-cover" src="{{items.thumb}}"></image>
+          </view>
+        </view>
+        <view class="price-current-view">
+          ¥
+          <text style="font-family:PingFang-SC-Medium;color:rgba(24,24,24,1);font-size:40rpx;">{{items.price}}</text>
+          <text style='color: #A0A0A0;' wx:if="{{items.original_price>0}}">￥</text>
+          <label class='originalprice-label' wx:if="{{items.original_price>0}}">{{items.original_price}}</label>
+          <view style="font-size:30rpx;">已选择"{{selecteproperty}} {{buycount}}件"</view>
+        </view>
+      </view>
+      <view class="dialog-block-item" style="padding-left:10px;padding-right:10px;" wx:for="{{items.spec_list}}" wx:for-item="spec_list">
+        <view class="clearfix">
+          <view style='width:100rpx;'>
+            <text style='font-weight: bold;'>{{spec_list.spec_name}}</text>
+          </view>
+          <view class='spec-list-view'>
+            <text wx:for="{{spec_list.spec_value_list}}" wx:for-item="property" class="{{property.is_selected==1?'commodityinfo-color':'size-item-text'}}" bindtap='onSelected' data-item='{{property}}'>{{property.spec_value_name}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="dialog-block-item" style="padding-left:10px;padding-right:10px;">
+        <view class="clearfix1">
+          <text style='font-weight: bold;'>数量</text>
+          <view class="pull-right">
+            <!-- <label class="pull-left">库存{{items.max}}件
+              </label> -->
+            <view class="quantity">
+              <label class='pay-buy-count-label' bindtap='onLessenItemClick' data-item="{{items}}">-</label>
+              <input class="pay-buy-count" type="number" value="{{buycount}}" bindinput="onInputBuyCount" />
+              <label class='pay-buy-count-label' bindtap='onAddItemClick' data-item="{{items}}">+</label>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="btn" bindtap="onAddToShoppingCart" data-item="{{items}}">{{isAddCart?'加入购物车':'确认'}}</view>
+    </view>
+  </view>
+</view>

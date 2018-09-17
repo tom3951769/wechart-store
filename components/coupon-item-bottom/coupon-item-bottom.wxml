@@ -1,0 +1,31 @@
+<view id="payDialog" class="page-dialog-wrap" hidden="{{hidden}}">
+  <view class='payDialog-bg'></view>
+  <view class="conpon-bottom-dialog">
+    <view class="page-bottom-content">
+      <checkbox-group >
+        <view class='conpon-item' wx:for="{{items}}" wx:key="{{item.coupon_code}}">
+          <view class='conpon-item-price-view'>
+            <text class='conpon-item-price'>￥{{item.coupon_money}}</text>
+            <view class='row-view'>
+              <view class='column-view'>
+                <text class='conpon-item-text'>{{item.brief_desc}}</text>
+                <text class='conpon-item-text'>{{item.coupon_name}}</text>
+                <text class='conpon-item-time'>{{item.effective_time}}-{{item.expriry_time}}</text>
+              </view>
+              <checkbox class='conpon-checkbox' checked='{{item.ischecked}}' bindtap='onSeletedCoupon' data-item='{{item}}'  data-typenumber='{{typenumber}}'
+              ></checkbox>
+            </view>
+          </view>
+          <view class='fillnblock'></view>
+        </view>
+      </checkbox-group>
+      <view class='noconpon-view'>
+        <text class='noconpon-title' wx:if="{{typenumber==1}}">不使用优惠券</text>
+        <text class='noconpon-title' wx:if="{{typenumber==2}}">不使用代金券</text>
+        <checkbox class='conpon-checkbox' checked='{{isuse}}' bindtap='onIsUse' data-items="{{items}}" data-isuse='{{isuse}}' data-typenumber='{{typenumber}}'></checkbox>
+      </view>
+      <view class='fillnblock'></view>
+      <view class="conpon-btn" bindtap="onAffirm" data-items="{{items}}">确认</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,151 @@
+/* pages/float_tab/float_tab.wxss */
+
+.scroll-item-view1-text
+{
+  width:310px;
+  font-size:32rpx;
+  margin-bottom:20rpx;
+}
+.found-image-view {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.found-image {
+  height: 1100rpx;
+  margin: 39rpx auto auto auto;
+  width: 90%;
+  border-radius: 30rpx;
+}
+
+.scroll-item-button {
+  height: 40rpx;
+  font-size: 18rpx;
+  font-family: PingFang-SC-Medium;
+  color: #fdf8f6;
+  background-color: #ea8a63;
+  border-radius: 0rpx;
+  margin-left: 160rpx;
+}
+.scroll-item-view1-image
+{
+  width: 620rpx;
+  height: 620rpx;
+}
+.scroll-view-label1 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 78rpx;
+}
+
+.scroll-view-label {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 29rpx;
+}
+
+.scroll-item-label {
+  height: 80rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  flex-wrap: warp;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.scroll-item-label1 {
+  margin-top: 10%;
+  height: 20rpx;
+  font-size: 18rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(160, 160, 161, 1);
+  flex-wrap: warp;
+}
+
+.scroll-item-label2 {
+  font-size: 18rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(160, 160, 161, 1);
+  flex-wrap: warp;
+}
+
+.flaot-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-item-view-image {
+  height: 250rpx;
+  width: 250rpx;
+  border-radius: 8rpx;
+}
+
+.scroll-item-view {
+  margin-top: 5%;
+  margin-left: 39rpx;
+  margin-right: 39rpx;
+  width: 90%;
+  height: 250rpx;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #f4f4f4;
+}
+
+.scroll-item-view1 {
+  margin-top: 5%;
+  margin-left: 39rpx;
+  margin-right: 39rpx;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #f4f4f4;
+}
+
+.swiper-tab-view {
+  width: 100%;
+  display: flex;
+  height: 100rpx;
+}
+
+.swiper-tab {
+  width: 33%;
+  height: 100%;
+  margin-top: 40rpx;
+}
+
+.swiper-tab-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(152, 152, 152, 1);
+  text-align: center;
+  border-bottom-color: black;
+}
+
+.active {
+  color: rgba(230, 187, 118, 1);
+}
+
+.activeborder {
+  color: rgba(230, 187, 118, 1);
+}
+
+.activeborder:after {
+  content: '';
+  position: absolute;
+  margin-left: -25rpx;
+  margin-top: 24rpx;
+  right: auto;
+  height: 4rpx;
+  width: 44rpx;
+  background-color: #e6bb76;
+}

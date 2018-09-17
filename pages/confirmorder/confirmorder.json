@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "usingComponents": {
+    "button-item": "../../components/button-item/button-item",
+    "coupon-item-bottom": "../../components/coupon-item-bottom/coupon-item-bottom"
+  }
+}

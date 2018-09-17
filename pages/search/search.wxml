@@ -1,0 +1,35 @@
+<view class='searchview-bg'>
+  <view class='searchview'>
+    <view class='searchview-item-view'>
+      <view class='searchview-item'>
+        <image class='searchimage' mode='aspectFill' src='/pages/images/searchicon.png'></image>
+        <input class='searchinput' focus='true' placeholder='{{search_word}}' value='{{search_word_input}}' bindinput='searchinput'></input>
+      </view>
+      <text class='classifyimage' bindtap='toClassify' data-value="{{search_word_input}}">搜索</text>
+    </view>
+  </view>
+  <view class='search-hot-content' wx:if="{{search_hot_wordlist!=''}}">
+    <view class='search-hot-delete'>
+      <text class='searchtitle'>最近搜索</text>
+      <image class='search-hot-delete-img' mode='aspectFill' bindtap='deleteSearchHotWord' src='/pages/images/shoppingcartremoveicon.png'></image>
+    </view>
+    <view>
+      <view class='searchcontent-item'>
+        <view class='searchcontent-item-view' wx:for='{{search_hot_wordlist}}' wx:key='{{item.id}}'>
+          <text class='searchcontent-item-text' bindtap='toClassify' data-value="{{item.keyword}}">{{item.keyword}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='searchcontent' >
+    <text class='searchtitle'>热门搜索</text>
+    <view>
+      <view class='searchcontent-item'>
+        <view class='searchcontent-item-view' wx:for='{{search_wordlist}}' wx:key='{{item.id}}'>
+          <text class='searchcontent-item-text' bindtap='toClassify' data-value="{{item.keyword}}">{{item.keyword}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,145 @@
+.button-view1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.userinfo-view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.invitefriend-view {
+  position: relative;
+  height: 121rpx;
+}
+
+.classify-label {
+  margin-bottom: 20rpx;
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(102, 102, 102, 1);
+}
+
+.classify-commodity-view {
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  height: 133rpx;
+}
+
+.classify-commodity-image {
+  margin: auto;
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.classify-commodity-item-view {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.invitefriend-button {
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  border-radius: 30rpx;
+  width: 692rpx;
+  height: 62rpx;
+  background-color: #eac27d;
+  font-family: PingFang-SC-Medium;
+  font-size: 28rpx;
+  color: rgba(35, 35, 33, 1);
+}
+
+.seckill-commodity-tab {
+  width: 8rpx;
+  height: 15rpx;
+  position: absolute;
+  margin-top: 8.5%;
+  margin-left: 68%;
+}
+
+.fillnblock {
+  height: 19rpx;
+  background: #f4f4f4;
+}
+
+.classify-scroll-view {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.classify-view {
+  width: 100%;
+  text-align: center;
+  height: 100%;
+}
+
+.classify-button {
+  padding-left: 0;
+  margin-right: 5%;
+  margin-left: 5%;
+  height: 120rpx;
+  color: rgba(35, 35, 33, 1);
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+.classify-button::after {
+  border-radius: 0rpx;
+  border-bottom: 2rpx solid #f4f4f4;
+  border-left: none;
+  border-top: none;
+}
+
+.wecharticon-view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  height: 300rpx;
+  position: relative;
+}
+
+.wechart-bg {
+  width: 100%;
+  height: 300rpx;
+  position: absolute;
+}
+
+.wechartname-label {
+  margin-left: 20rpx;
+  font-weight: bold;
+  font-size: 32rpx;
+  color: white;
+}
+
+.wecharticon-image {
+  margin-left: 40rpx;
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  border: 8rpx solid #4d4c50;
+}
+
+.wechartsetting-image {
+  height: 40rpx;
+  width: 40rpx;
+}

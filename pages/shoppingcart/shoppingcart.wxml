@@ -1,0 +1,36 @@
+<view>
+  <view class='top-right-corner-view' wx:if="{{list!=null}}">
+    <text class='top-right-corner' bindtap='toRedact'>{{toprightcorner}}</text>
+  </view>
+  <shoppingcart-item wx:if="{{list!=null}}" items="{{list}}" bindaddBuyCountClick="addBuyCountClick"      bindlessenBuyCountClick="lessenBuyCountClick" bindtoCommodity="toCommodity"  bindcheckboxChangeClick="checkboxChangeClick"  bindremoveItemClick="removeItemClick"/>
+  <view class='blank'></view>
+  <view wx:if="{{list==null}}" class='shoppingcartnull-view'>
+    <view class='shoppingcartnull-bg-view'>
+      <image class='shoppingcartnull-image' src='/pages/images/shoppingcartnull.png' mode='aspectFill'></image>
+    </view>
+    <label class='shoppingcartnull-label'>您的购物车还是空的哦</label>
+    <button class='shoppingcartnull-button' bindtap='gohome'>去逛逛</button>
+  </view>
+  <!-- 底部导航 -->
+  <view class="detail-nav" hidden='{{ !isRedact }}' wx:if="{{list!=null}}">
+    <view class='car-view'>
+     <checkbox-group  class='checkbox-seleted' bindtap='selectedAllClick' >
+      <checkbox checked='{{selectedAll}}' >全选</checkbox>
+      </checkbox-group>
+    </view>
+    <button class="button-black" bindtap="deleteCartItem" formType="submit">删除</button>
+  </view>
+  <view class="detail-nav" hidden='{{ isRedact }}' wx:if="{{list!=null}}">
+    <view class='car-view'>
+     <checkbox-group  class='checkbox-seleted' bindtap='selectedAllClick' >
+      <checkbox  checked='{{selectedAll}}'>全选</checkbox>
+       </checkbox-group>
+      <view class='total-price-view'>
+        <text style='font-size:28rpx;width:60rpx;'>合计</text>
+        <text style='font-size:18rpx;'>￥</text>
+        <text style='font-size:34rpx;'>{{totalprice}}</text>
+      </view>
+    </view>
+    <button class="button-black" bindtap="immeBuy" formType="submit">立即结算({{buycount}})</button>
+  </view>
+</view>

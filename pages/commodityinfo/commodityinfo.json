@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": " ",
+  "usingComponents": {
+    "float-tab-bottom": "../../components/float-tab-bottom/float-tab-bottom"
+  }
+}

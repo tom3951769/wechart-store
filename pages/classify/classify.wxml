@@ -1,0 +1,7 @@
+<view class="flaot-container">
+  <view class='stance-view'></view>
+  <search-tab items="{{tabs}}" search_word="{{search_word}}" search_word_input="{{search_input}}" bindonSearchinput="onSearchinput" bindonSearch="onSearch" curTabId="{{curTabId}}" fixedBar="{{isShowFloatTab}}" bindtabclick="clickTab" />
+  <view class='classify-view'>
+    <searchcommodity-item items='{{list}}' bindClick="onClick" />
+  </view>
+</view>

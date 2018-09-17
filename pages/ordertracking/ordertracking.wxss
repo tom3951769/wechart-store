@@ -1,0 +1,3 @@
+/* pages/ordertracking/ordertracking.wxss */
+
+@import "../myorder/myorder.wxss";

@@ -1,0 +1,6 @@
+<template name='tab_item'>
+    <view class="tab_item">
+        <view class="{{current==item.tag_id?'tab_item_text_select':'tab_item_text_nor'}}" >{{item.tag_name}}</view>
+        <view wx:if="{{current==item.tag_id}}" class="tab_item_bottom_line"></view>
+    </view>
+</template>

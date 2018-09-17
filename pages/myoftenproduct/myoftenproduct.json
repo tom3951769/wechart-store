@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "常购商品",
+  "backgroundColor": "#FFFFFF",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false,
+  "onReachBottomDistance": 0
+}

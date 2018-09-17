@@ -1,0 +1,56 @@
+<view class='setting'>
+<!-- catchsubmit="formSubmit" catchreset="formReset" -->
+  <form bindsubmit='formSubmit'>
+    <view class='setting-view' wx:for='{{settingbutton}}' wx:key='{{item.id}}'>
+      <view class="setting-button-view" bindtap='toNavigateUrl' id='{{item.id}}' data-items='{{item}}'>
+        <text class='setting-text'>{{item.nodeName}}</text>
+        <input wx:if="{{item.id==0}}" name='name' class='address-input' placeholder='请填写真实姓名，确保顺利通关' value='{{contacts}}'></input>
+           <input wx:if="{{item.id==4}}" name='contacts_id_num' class='address-input' placeholder='请填写真实身份证，确保顺利通关' value='{{contacts_id_num}}'></input>
+        <input wx:if="{{item.id==1}}" name='phonecode' class='address-input'  value='{{mobile}}'></input>
+        <view wx:if="{{item.id==2}}" class='seleted-addree-view' bindtap='translate'>
+          <input class='seleted-addree-input' name='fulladdress' placeholder='请选择' value='{{province_name}}{{city_name}}{{area_name}}'></input>
+          <image class='setting-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+        </view>
+        <input wx:if="{{item.id==3}}" name='address' class='seleted-addree-input' value='{{address}}' ></input>
+       
+      </view>
+    </view>
+    <view class='fillnblock'></view>
+    <view class='setting-view' wx:for='{{settingbutton1}}' wx:key='{{item.id}}'>
+      <view class="setting-button-view">
+        <text class='setting-text'>{{item.nodeName}}</text>
+        <checkbox name='isDefult'  checked='{{isDefult}}'></checkbox>
+      </view>
+    </view>
+    <button  class='btn' form-type="submit" bindtap='add'>保存并使用</button>
+  </form>
+
+  <view class="animation-element-wrapper" animation="{{animation}}" style="visibility:{{show ? 'visible':'hidden'}}" bindtap="hiddenFloatView" data-id="444">
+    <view class="animation-element" catchtap="nono">
+      <text class="left-bt" catchtap="hiddenFloatView" data-id="555">取消</text>
+      <text class="right-bt" catchtap="hiddenFloatView" data-id="666">确定</text>
+      <view class="line"></view>
+
+      <picker-view indicator-style="height: 50rpx;" value="{{value}}" bindchange="bindChange" catchtap="nono">
+        <!--省-->
+        <picker-view-column>
+          <view wx:for="{{provinces}}" wx:for-item="sheng" wx:key="">
+            {{sheng.name}}
+          </view>
+        </picker-view-column>
+        <!--地级市-->
+        <picker-view-column>
+          <view wx:for="{{citys}}" wx:key="">
+            {{item.name}}
+          </view>
+        </picker-view-column>
+        <!--区县-->
+        <picker-view-column>
+          <view wx:for="{{countys}}" wx:key="">
+            {{item.name}}
+          </view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+</view>

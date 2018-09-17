@@ -1,0 +1,31 @@
+<view class='pagebackground'>
+  <view class='seckill-title-view'>
+    <text class='seckill-title'>{{list.start_date}}-{{list.end_date}}</text>
+    <view class='seckill-title-residue-view'>
+      <view class='seckill-title-residue-border-view'></view>
+      <text class='seckill-title-residue-border-text'>距离结束还有</text>
+      <view class='seckill-residue'>
+        <view class='seckill-residue-view'>
+          <view class='seckill-residue-item-view'>
+            <text class='seckill-residuehours-text1'></text>
+            <text class='seckill-residuehours-text2'></text>
+            <text class='seckill-residue-view-text'>{{list.hour}}</text>
+          </view>
+          <view class='seckill-residue-item-view'>
+            <text class='seckill-residuehours-text1'></text>
+            <text class='seckill-residuehours-text2'></text>
+            <text class='seckill-residue-view-text'>{{list.minute}}</text>
+          </view>
+          <view class='seckill-residue-item-view'>
+            <text class='seckill-residuehours-text1'></text>
+            <text class='seckill-residuehours-text2'></text>
+            <text class='seckill-residue-view-text'>{{list.second}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='commodity-item-view'>
+    <commodity-item items="{{list.list}}" bindtabclick="clickTab" />
+  </view>
+</view>

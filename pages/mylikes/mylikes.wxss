@@ -1,0 +1,119 @@
+/* pages/mylikes/mylikes.wxss */
+page{
+background: #F1F2F4;
+}
+.del {
+background-color: orangered;
+width: 180rpx;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color: #fff;
+-webkit-transform: translateX(180rpx);
+transform: translateX(180rpx);
+-webkit-transition: all 0.4s;
+transition: all 0.4s;
+}
+.touch-item {
+display: flex;
+justify-content: space-between;
+border-bottom:16rpx solid #F3F4F6;
+width: 100%;
+overflow: hidden
+}
+.touch-move-active .mylikecommodityinfo,
+.touch-move-active .del {
+-webkit-transform: translateX(0);
+transform: translateX(0);
+}
+
+.touch-left
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.mylikecommodityinfoline {
+  height: 16rpx;
+  background-color: #F3F4F6;
+}
+.mylikecommodityinfo-view
+{
+  margin-left: 20rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mylikecommodityinfo-icon
+{
+  float: right;
+  right: 0;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right:50rpx;
+}
+.mylikecommodityinfo-originalprice-view
+{
+  margin-left: 5%;
+  display: inline;
+  text-decoration:line-through;
+}
+.mylikecommodityinfo-price-view
+{
+  margin-top:5%; 
+  
+  height: 50rpx;
+}
+.mylikecommodityinfo-price-text-icon
+{
+  font-size: 20rpx;
+  color:#181818;
+  font-family:PingFang-SC-Medium;
+}
+.mylikecommodityinfo-text-view
+{
+  width: 425rpx;
+  font-size:26rpx;
+  font-family:PingFang-SC-Medium;
+  overflow: hidden;
+  height: 80rpx;
+  text-overflow:ellipsis;
+}
+
+.mylikecommodityinfo-image
+{
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 150rpx;
+  width: 200rpx;
+}
+.mylikecommodityinfo
+{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top:16rpx;
+  height: 200rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: left;
+  width: 100%;
+  padding: 10px;
+  line-height: 22px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(180rpx);
+  transform: translateX(180rpx);
+  margin-left: -180rpx
+}
+.mylike-scroll-view
+{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #F1F2F4;
+}

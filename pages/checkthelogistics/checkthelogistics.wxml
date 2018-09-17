@@ -1,0 +1,45 @@
+<!--pages/checkthelogistics/checkthelogistics.wxml-->
+<view>
+  <view class='product_logsitics_title_view'>
+    <image class='product_logsitics_bg' src='/pages/images/bg.png' mode='aspectFill'></image>
+    <view class='product_logsitics_title'>
+      <image class='product_logsitics_title_img' src='/pages/images/logisticsicon1.png' mode='aspectFit'></image>
+      <text class='product_logsitics_title_text'>物流公司：{{json.logistics_company}}</text>
+    </view>
+    <image class='product_logsitics_title_img1' src='/pages/images/waggonicon.png' mode='aspectFit'></image>
+  </view>
+  <view class='product_logsitics_vessel'>
+    <view wx:for="{{json.list}}">
+      <view class='product_logsitics_content' wx:if="{{item.currentindex==1}}">
+        <view class='product_logsitics_content_img_view'>
+          <image class='product_logsitics_content_img' src='/pages/images/currentpointicon.png' mode='aspectFit'></image>
+          <image class='product_logsitics_content_img_line' src='/pages/images/lineicon.png' mode='aspectFit'></image>
+        </view>
+        <view class='product_logsitics_content_info'>
+          <text class='product_logsitics_content_info_text'>{{item.datetime}}</text>
+          <text class='product_logsitics_content_info_text1'>{{item.logistics_info}}</text>
+        </view>
+      </view>
+      <view class='product_logsitics_content' wx:if="{{item.currentindex==2}}">
+        <view class='product_logsitics_content_img_view'>
+          <image class='product_logsitics_content_img' src='/pages/images/deliverpoint.png' mode='aspectFit'></image>
+          <image class='product_logsitics_content_img_line' src='/pages/images/lineicon.png' mode='aspectFit'></image>
+        </view>
+        <view class='product_logsitics_content_info'>
+          <text class='product_logsitics_content_info_text'>{{item.datetime}}</text>
+          <text class='product_logsitics_content_info_text1'>{{item.logistics_info}}</text>
+        </view>
+      </view>
+      <view class='product_logsitics_content' wx:if="{{item.currentindex==0}}">
+        <view class='product_logsitics_content_img_view'>
+          <image class='product_logsitics_content_img' src='/pages/images/delivericon.png' mode='aspectFit'></image>
+          <!-- <image class='product_logsitics_content_img_line' src='/pages/images/lineicon.png' mode='aspectFit'></image> -->
+        </view>
+        <view class='product_logsitics_content_info'>
+          <text class='product_logsitics_content_info_text'>{{item.datetime}}</text>
+          <text class='product_logsitics_content_info_text1'>{{item.logistics_info}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

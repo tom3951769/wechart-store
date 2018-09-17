@@ -1,0 +1,547 @@
+/**index.wxss**/
+
+.seckill-content-right-view
+{
+  display: flex;
+  flex-direction: column;
+  margin-left:30rpx;
+  align-items:left;
+}
+
+.seckill-content-view
+{
+  display: flex;
+  flex-direction: row;
+  margin-top:30rpx;
+  margin-left:20rpx;
+
+}
+.brand_name_text
+{
+  margin: 5%;
+}
+.brand-view
+{
+  display: flex;
+  flex-direction: row;
+}
+.brand
+{
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  font-size:28rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(35,35,33,1);
+}
+.seckill-button-view
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.seckill-price-view
+{
+  margin-top:22rpx;
+  height: 50rpx;
+  margin-bottom:22rpx;
+}
+.slogan_list_swiper
+{
+  background: #f4f4f4;
+  font-size: 28rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.nohide
+{
+  display: block;
+}
+.hide
+{
+  display: none;
+}
+.classify-label
+{
+  width: 200rpx;
+  font-size:26rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(102,102,102,1);
+  text-align: center;
+}
+.classify-commodity-image
+{
+  height: 100rpx;
+  width: 100rpx;
+}
+.classify-commodity-view
+{
+  margin-bottom:5%;
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  height: 200rpx;
+}
+.classify-commodity-item-view
+{
+  display:flex;
+  flex-direction: column;
+  width: 180rpx;
+align-items:center;
+justify-content:center;
+
+}
+.classify-view
+{
+  height: 100%;
+}
+
+.classify-button
+{
+  text-align: left;
+  background-color: #FFFFFF;
+  border: none;
+}
+.classify-button::after {
+  border-bottom: 2px;
+} 
+.classify-scroll-view
+{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.healthy-view
+{
+  height: 609rpx;
+}
+.healthy-lable-view {
+  width: 500rpx;
+  margin-top:44rpx;
+
+}
+
+.healthy-lable {
+  margin-top: 32rpx;
+  width: 100rpx;
+  height: 12rpx;
+  font-size: 32rpx;
+  font-family: Arial-BoldMT;
+  color: rgba(35, 35, 33, 1);
+  word-spacing: 6rpx;
+  flex-wrap: wrap;
+}
+.healthy-item-image
+{
+  margin-left:30rpx; 
+}
+
+
+.healthy-scroll-image
+{
+  margin-top:60rpx;
+  height: 400rpx;
+  width: 692rpx;
+}
+.healthy-scroll-view
+{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.seckill-swiper
+{
+  margin-top:40rpx;
+  margin-left: 33rpx;
+  width: 652rpx;
+  height: 351rpx;
+  background-color: #f7f7f7;
+  border-radius: 16rpx;
+  font-size: 20rpx;
+  font-family: ArialMT;
+  border:1rpx solid #E8E8E8;
+}
+.seckill-swiper-view
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.seckill-commodity-tab
+{
+  margin-left: 20rpx;
+  width: 15rpx;
+  height: 30rpx;
+}
+.seckill-commodity-price-label {
+  position: absolute;
+  margin-top: 205rpx;
+  margin-left: 311rpx;
+  font-size: 28rpx;
+}
+
+.seckill-button {
+  width: 144rpx;
+  height: 46rpx;
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  color: #fdf8f6;
+  background-color: #ea8a63;
+  border-radius: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.seckill-button::after {
+  border-radius: 0;
+}
+
+
+.seckill-commodity-image {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.seckill-commodity-time-view {
+  width: 31rpx;
+  height: 31rpx;
+  background-color: #232321;
+  border-radius: 4rpx;
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.seckill-commodity-title-view
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.seckill-commodity-view {
+  margin-top:33rpx;
+  margin-left: 31rpx;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.seckill-image {
+  width: 61rpx;
+  height: 68rpx;
+  margin-right:60rpx;
+
+}
+
+.seckill-label-view {
+  width: 500rpx;
+}
+
+
+
+.seckill-commodity-label-view {
+  width: 270rpx;
+}
+
+.seckill-label7 {
+  font-size: 20rpx;
+  font-family: PingFang-SC-Medium;
+  color: #232321;
+  line-height: 32rpx;
+}
+
+.seckill-label6 {
+  font-size: 20rpx;
+  font-family: PingFang-SC-Medium;
+  color: #666;
+  line-height: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.seckill-label5 {
+  height: 13rpx;
+  margin-left: 1rpx;
+}
+
+.seckill-label4 {
+  margin-right: 10rpx;
+  height: 22rpx;
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(152, 152, 152, 1);
+  line-height: 28rpx;
+}
+
+.seckill-label3 {
+  position: absolute;
+  margin-top: 85rpx;
+  margin-left: 33rpx;
+  width: 100%;
+  height: 22rpx;
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(35, 35, 33, 1);
+  line-height: 28rpx;
+}
+
+.seckill-label2 {
+  margin-left: 12rpx;
+  margin-top: 32rpx;
+  width: 206rpx;
+  height: 12rpx;
+  font-size: 32rpx;
+  font-family: Arial-BoldMT;
+  color: rgba(35, 35, 33, 1);
+  word-spacing: 3rpx;
+}
+
+.seckill-label1 {
+  margin-top: 32rpx;
+  width: 100rpx;
+  height: 12rpx;
+  font-size: 32rpx;
+  font-family: Arial-BoldMT;
+  color: rgba(35, 35, 33, 1);
+  word-spacing: 6rpx;
+  flex-wrap: wrap;
+}
+.seckill-title-view
+{
+  margin-top: 44rpx;
+  display: flex;
+  flex-direction: row;
+  margin-left:30rpx; 
+  justify-content: space-between;
+}
+
+.seckill-view {
+  height: 550rpx;
+}
+
+.health-image {
+  height: 380rpx;
+  width: 100%;
+}
+
+.health-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.health-view {
+  height: 900rpx;
+}
+
+.swiper-tab-view {
+  width: 100%;
+  display: flex;
+}
+
+.swiper-tab {
+  margin-left: 31rpx;
+  margin-top: 37rpx;
+  margin-bottom: 25rpx;
+}
+
+.swiper-tab-item {
+  position: relative;
+  width: 90rpx;
+  height: 100%;
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(152, 152, 152, 1);
+  text-align: center;
+  border-bottom-color: black;
+}
+
+.active {
+  color: rgba(230, 187, 118, 1);
+}
+
+.activeborder {
+  color: rgba(230, 187, 118, 1);
+}
+
+.activeborder:after {
+  content: '';
+  position: absolute;
+  left: 20rpx;
+  top: 50rpx;
+  bottom: 0;
+  right: auto;
+  height: 6rpx;
+  width: 44rpx;
+  background-color: #E6BB76;
+}
+
+.selected-swiper-tab-item {
+  width: 90rpx;
+  height: 100%;
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(230, 187, 118, 1);
+  text-align: center;
+  border-bottom-color: rgba(230, 187, 118, 1);
+}
+
+.newprice {
+  width: 88rpx;
+  height: 20rpx;
+  font-size: 32rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(35, 35, 33, 1);
+  line-height: 30px;
+}
+
+.newimage {
+  width: 210rpx;
+  height: 210rpx;
+}
+
+.newtext {
+  width: 200rpx;
+  font-size: 18rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(102, 102, 102, 1);
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.newcommodity {
+  padding-left: 23rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.newmodule {
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+.newicon {
+  padding-left: 8rpx;
+  padding-bottom: 5rpx;
+  width: 10rpx;
+  height: 14rpx;
+}
+
+.newlabel2 {
+  margin-left: 12rpx;
+  margin-top: 32rpx;
+  width: 206rpx;
+  height: 12rpx;
+  font-size: 16rpx;
+  font-family: ArialMT;
+  color: rgba(178, 178, 178, 1);
+  word-spacing: 3rpx;
+}
+
+.newlabel1 {
+  margin-top: 32rpx;
+  width: 206rpx;
+  height: 12rpx;
+  font-size: 16rpx;
+  font-family: ArialMT;
+  color: rgba(178, 178, 178, 1);
+  word-spacing: 6rpx;
+}
+
+.newlabel {
+  width: 94rpx;
+  height: 23rpx;
+  /* font-size: 24px; */
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(35, 35, 33, 1);
+  line-height: 28rpx;
+}
+
+.newview {
+  padding-top: 68rpx;
+  text-align: center;
+}
+
+.fillnblock {
+  height: 19rpx;
+  background: #f4f4f4;
+}
+
+.newswiper {
+  margin-top: 56rpx;
+  height: 400rpx;
+  width: 100%;
+  text-align: center;
+}
+
+.swiper {
+  height: 400rpx;
+  width: 100%;
+}
+
+.swiperimage {
+  height: 100%;
+  width: 100%;
+}
+
+.swiperview {
+  margin-top: 3%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.classifyimage {
+  padding-left: 29rpx;
+  height: 22rpx;
+  width: 34rpx;
+}
+
+.searchinput {
+  padding-left: 72rpx;
+  height: 51rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(161, 161, 159, 1);
+  width: 100%;
+  z-index: 1;
+}
+
+.searchimage {
+  position: absolute;
+  left: 32rpx;
+  height: 26rpx;
+  width: 27rpx;
+}
+
+.searchview1 {
+  display: flex;
+  margin-left: 3%;
+  margin-right: 3%;
+  align-items: center;
+}
+
+.searchview {
+  position: relative;
+  background: #f6f6f6;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}

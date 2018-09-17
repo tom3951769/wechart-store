@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "优惠卷",
+  "backgroundColor": "#FFFFFF",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "float-tab": "../../components/float-tab/float-tab",
+    "conpon-item": "../../components/coupon-item/coupon-item"
+  },
+  "onReachBottomDistance": 0
+}

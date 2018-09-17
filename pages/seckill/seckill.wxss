@@ -1,0 +1,115 @@
+page{
+background: #F9DC97; 
+}
+.pagebackground
+{
+  background-color:#F9DC97; 
+}
+.seckill-residuehours-text1
+{
+  position: absolute;
+  margin-left:5rpx; 
+  height: 41rpx;
+  width: 35rpx;
+  background-color: black;
+}
+.seckill-residuehours-text2
+{
+  position: absolute;
+  margin-left:40rpx; 
+  height: 41rpx;
+  width: 35rpx;
+  background-color: black;
+}
+.seckill-residueminute-text
+{
+  margin-left:5rpx; 
+  height: 41rpx;
+  width: 35rpx;
+  background-color: black;
+}
+.seckill-residue-view-text
+{
+  position: absolute;
+  margin-left: 15rpx;
+  letter-spacing: 24rpx;
+  font-size:26rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(255,255,255,1);
+}
+.seckill-residue-item-view
+{
+  position: relative;
+  width: 100%;
+}
+.seckill-residue-view
+{
+  width: 230rpx;
+  position: absolute;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.seckill-residue
+{
+  margin-top:36rpx; 
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: center;
+  width: 100%;
+}
+.seckill-title-residue-border-text
+{
+  margin-top:36rpx;
+  background-color: #F9DC97;
+  text-align: center;
+  width: 170rpx;
+  font-size:22rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(0,0,0,1);
+  z-index: 999;
+}
+.seckill-title-residue-border-view
+{
+  position: absolute;
+  margin-top:36rpx; 
+  width: 318rpx;
+  height: 62rpx;
+  border:4rpx solid black;
+}
+.seckill-title-residue-view
+{
+  position: relative;
+  width: 318rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.seckill-title
+{
+  margin-top: 36rpx;
+  position: absolute;
+  font-size:36rpx;
+  font-family:PingFang-SC-Heavy;
+  color:rgba(35,35,33,1);
+}
+.seckill-title-view
+{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: center;
+  height: 238rpx;
+  width: 100%;
+  background-color:#F9DC97; 
+}
+.commodity-item-view
+{
+  margin: 0 5% 0 5%;
+  background-color:#F9DC97; 
+}

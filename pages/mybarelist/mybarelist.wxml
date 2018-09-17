@@ -1,0 +1,35 @@
+<!--pages/mybarelist/mybarelist.wxml-->
+<view>
+
+  <view class='product_content' wx:for="{{list}}">
+    <view class='product_cell'>
+      <view class='product_image_content'>
+        <image class='product_image'  src='{{item.product_img}}' mode='aspectFit'></image>
+        <view class='product_image_time'  wx:if="{{item.status==0}}">
+          <text>剩余{{item.hour}}:{{item.minute}}:{{item.second}}</text>
+        </view>
+      </view>
+      <view class='product_content_topView'>
+        <text class='product_title'>{{item.product_title}}</text>
+        <view>
+          <text class='product_money'>￥{{item.price}}</text>
+          <text class='product_delet'>￥{{item.bare_price}}</text>
+        </view>
+        <view class='bottom_view'>
+          <text class='product_title_sub' wx:if="{{item.status==0}}">需要{{item.surplus_help}}人助力</text>
+          <text class='product_title_sub' wx:if="{{item.status==1}}">完成下单</text>
+           <text class='product_title_sub' wx:if="{{item.status==2}}">已下单</text>
+           <text class='product_title_sub' wx:if="{{item.status==3}}">助力失败</text>
+           <text class='product_title_sub' wx:if="{{item.status==-1}}">助力失败</text>
+          <view>
+            <button class='goPay3' open-type='share' data-item='{{item}}' wx:if="{{item.status==0}}"  >继续邀请</button>
+             <button class='goPay3'  bindtap='goPayTap' data-item='{{item}}' wx:if="{{item.status==1}}">去下单</button>
+             <button class='goPay3' data-item='{{item}}' wx:if="{{item.status==2}}" disabled='true'>已下单</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='line'></view>
+  </view>
+
+</view>

@@ -1,0 +1,54 @@
+/* pages/systemsetting/systemsetting.wxss */
+page{
+background: #F1F2F4;
+}
+
+.fillnblock {
+  height: 19rpx;
+  background: #f4f4f4;
+}
+.setting-text
+{
+  float: left;
+  left: 0;
+  height: 40rpx;
+}
+.setting-image
+{
+  float: right;
+  right: 0;
+  height:29rpx;
+  width: 18rpx;
+}
+.setting
+{
+  margin-top:3%; 
+}
+.setting-view
+{
+  height: 100%;
+  border-radius: 0;
+  background-color: white;
+}
+
+.setting-button-view
+{
+  margin-left:5%; 
+  margin-right:5%;
+  height: 110rpx;
+  font-size:28rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(35,35,33,1);
+  background-color: white;
+  border-radius: 0rpx;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: center; 
+  border-bottom: 1rpx solid #F1F2F4;
+}
+.setting-button::after
+{
+  border:none;
+  border-bottom: 2rpx solid #F1F2F4;
+}

@@ -1,0 +1,17 @@
+<!--pages/found/found.wxml-->
+<view class="flaot-container">
+  <float-tab items="{{tablist}}" curTabId="{{curTabId}}" fixedBar="{{isShowFloatTab}}" bindtabclick="clickTab" />
+  <scroll-view>
+    <view class="{{item.data_type==2?'scroll-item-view1':'scroll-item-view'}}" wx:for='{{list}}' wx:key='{{item.index}}' scroll-y='true' data-item="{{item}}" bindtap='clickData'>
+     <view class='found-image-view' wx:if='{{item.data_type==2}}'>
+        <image class='scroll-item-view1-image' src="{{item.img_url}}" mode='widthFix' ></image>
+        <text class='scroll-item-view1-text' >{{item.img_copywriting}}</text>
+    </view>
+    <image class='scroll-item-view-image' src='{{item.text_logo}}' mode='aspectFill' wx:if='{{item.data_type==1}}'></image>
+    <view class='scroll-view-label' wx:if='{{item.data_type==1}}'>
+      <label class='scroll-item-label'>{{item.text_main_title}}</label>
+      <label class='scroll-item-label1'>{{item.text_sub_title}}</label>
+    </view>
+</view>
+</scroll-view>
+</view>

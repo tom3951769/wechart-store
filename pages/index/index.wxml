@@ -1,0 +1,191 @@
+<!--index.wxml-->
+<view wx:if='{{banner_list!=null}}'>
+  <view class='searchview1'>
+    <view class='searchview'>
+      <image class='searchimage' mode='aspectFit' src='/pages/images/searchicon.png'></image>
+      <input class='searchinput' placeholder='{{searchword}}' bindtap='toSearch'></input>
+    </view>
+    <!-- <image class='classifyimage' mode='aspectFill' src='/pages/images/classify.png'></image> -->
+  </view>
+  <scroll-view class='swiperview'>
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+      <block wx:for="{{banner_list}}" wx:key="{{item.product_id}}" data-items='{{item}}'>
+        <swiper-item>
+          <image src="{{item.img}}" class="swiperimage" mode="scaleToFill" bindtap='toBannerinfo' data-items='{{item}}' />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='newmodule'>
+      <view class='fillnblock'></view>
+      <swiper class='slogan_list_swiper' autoplay='true' display-multiple-items='1' vertical='true' duration='1000' interval='2000'>
+        <block wx:for='{{slogan_list}}'>
+          <swiper-item>
+            <view>
+              <text>{{item.slogan}}</text>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class='newview' bindtap='toModuleinfo'  data-items='{{newest_module}}'>
+        <text class='newlabel'>{{newest_module.module_name}}</text>
+        <image class='newicon' mode='aspectFill' src='/pages/images/newicon.png'></image>
+      </view>
+      <text class='newlabel1'>N E W </text>
+      <text class='newlabel2'>A R R I V A L S </text>
+      <swiper class="newswiper" display-multiple-items="3" autoplay="true" indicator-dots="true" interval="5000" duration="1000">
+        <block wx:for="{{newest_module.product_list}}">
+          <swiper-item>
+            <view class="newcommodity" bindtap='toCommoinfo' data-items='{{item}}'>
+              <image class="newimage" src="{{item.product_img}}" mode="scaleToFill" />
+              <text class="newtext">{{item.product_name}}</text>
+              <view class="mylikecommodityinfo-price-view">
+                <text class='mylikecommodityinfo-price-text-icon'>￥</text>
+                <text class='mylikecommodityinfo-price-text'>{{item.price}}</text>
+                <view class="mylikecommodityinfo-originalprice-view" wx:if="{{item.original_price>0}}">
+                  <text style='font-size: 22rpx;color: #A0A0A0;'>￥</text>
+                  <text style='font-size: 22rpx;color: #A0A0A0;'>{{item.original_price}}</text>
+                </view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="health-view">
+      <view class='fillnblock'></view>
+      <scroll-view scroll-x='true'>
+        <view class="swiper-tab-view">
+          <view class="swiper-tab" wx:for="{{category_list}}">
+            <view class="swiper-tab-item {{currentTab==index?'active':''}}">
+              <view class="{{currentTab==index?'activeborder':''}}" data-current="{{index}}" id="swiper-tab-item-{{item.index}}" bindtap="clickTab">{{item.category_name}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <swiper current="{{currentTab}}" class="health-swiper" display-multiple-items="1" bindchange="swiperTab">
+        <block wx:for="{{category_list}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+          <swiper-item>
+            <view>
+              <image class="health-image" src="{{item.category_img}}" mode='aspectFill' bindtap='toCategoryinfo' data-items='{{item}}'></image>
+              <swiper class="newswiper" display-multiple-items="3">
+                <block wx:for="{{item.product_list}}" wx:for-item="commodity" wx:key="{{commodity.product_id}}">
+                  <swiper-item>
+                    <view class="newcommodity" bindtap='toCommoinfo' data-items='{{commodity}}'>
+
+                      <image class="newimage" src="{{commodity.product_img}}" mode="aspectFit" />
+                      <text class="newtext">{{commodity.product_name}}</text>
+                      <view class="mylikecommodityinfo-price-view">
+                        <text class='mylikecommodityinfo-price-text-icon'>￥</text>
+                        <text class='mylikecommodityinfo-price-text'>{{commodity.price}}</text>
+                        <view class="mylikecommodityinfo-originalprice-view" wx:if="{{item.original_price>0}}">
+                          <text style='font-size: 26rpx;color: #A0A0A0;'>￥</text>
+                          <text style='font-size: 26rpx;color: #A0A0A0;'>{{commodity.original_price}}</text>
+                        </view>
+                      </view>
+                    </view>
+                  </swiper-item>
+                </block>
+              </swiper>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='fillnblock'></view>
+    <view class="seckill-view" wx:for="{{flashsale_module_list}}">
+      <view class='seckill-title-view'>
+        <view class="seckill-label-view">
+          <text class='seckill-label1'>{{item.module_name}}</text>
+        </view>
+        <image class='seckill-image' src="/pages/images/seckill.png" mode='aspectFill'></image>
+      </view>
+      <view class='seckill-swiper-view'>
+        <swiper current='{{seckillindex}}' class='seckill-swiper' display-multiple-items="1">
+          <block wx:for="{{item.product_list}}" wx:key="id" wx:for-item="commodity">
+            <swiper-item>
+              <view class='seckill-commodity-view'>
+                <view class='seckill-commodity-title-view'>
+                  <label class='seckill-label4'>距离秒杀结束还有</label>
+                  <view class='seckill-commodity-time-view'>{{commodity.hour}}</view>
+                  <label class='seckill-label5'>:</label>
+                  <view class='seckill-commodity-time-view'>{{commodity.minute}}</view>
+                  <label class='seckill-label5'>:</label>
+                  <view class='seckill-commodity-time-view'>{{commodity.second}}</view>
+                </view>
+                <view class='seckill-content-view'>
+                  <view>
+                    <image class='seckill-commodity-image' src="{{commodity.product_img}}" mode='aspectFill'></image>
+                  </view>
+                  <view class='seckill-content-right-view'>
+                    <view class='seckill-commodity-label-view'>
+                      <label class='seckill-label6'>{{commodity.product_name}}</label>
+                    </view>
+                    <view class="seckill-price-view">
+                      <text class='mylikecommodityinfo-price-text-icon'>￥</text>
+                      <text class='mylikecommodityinfo-price-text'>{{commodity.flashsale_price}}</text>
+                      <view class="mylikecommodityinfo-originalprice-view" wx:if="{{commodity.original_price>0}}">
+                        <text style='font-size: 26rpx;color: #A0A0A0;'>￥</text>
+                        <text style='font-size: 26rpx;color: #A0A0A0;'>{{commodity.original_price}}</text>
+                      </view>
+                    </view>
+                    <view class='seckill-button-view'>
+                      <button class='seckill-button' bindtap='toSeckill' data-items="{{item}}" >立即抢购</button>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <image class='seckill-commodity-tab' src='/pages/images/seckillcommodityicon.png' mode='aspectFill' bindtap='nextSeckill' data-items='{{index}}'></image>
+      </view>
+    </view>
+    <scroll-view class='healthy-scroll-view'>
+      <view class='healthy-view' wx:for='{{recomm_module_list}}' wx:key='{{item.id}}' scroll-y='true'>
+        <view class='fillnblock'></view>
+        <view class='healthy-item-image'>
+          <view class="healthy-lable-view">
+            <label class='healthy-lable'>{{item.module_name}}</label>
+          </view>
+          <image class='healthy-scroll-image' src='{{item.banner_img}}' mode='aspectFill' bindtap='toModuleinfo' data-items='{{item}}'></image>
+        </view>
+      </view>
+    </scroll-view>
+    <view class='fillnblock'></view>
+
+    <scroll-view scroll-x='true'>
+      <view class='brand-view'>
+        <view class='brand' wx:for="{{brand_list}}" bindtap='toBrand' data-item='{{item}}'>
+          <text class='brand_name_text'>{{item.brand_name}}</text>
+          <image src='{{item.brand_img}}' id='{{item.brand_id}}' mode='aspectFill'></image>
+        </view>
+      </view>
+    </scroll-view>
+    <view wx:for="{{bottom_category_list}}">
+      <button class="classify-button" bindtap='toCategoryinfo' data-items='{{item}}'>{{item.category_name}}</button>
+      <scroll-view scroll-x>
+        <view class='classify-commodity-view'>
+          <view class='classify-commodity-item-view' wx:for="{{item.sub_category_list}}" wx:for-item='commodity' bindtap='toCategoryinfoitem' data-items='{{commodity}}'>
+            <image class='classify-commodity-image' src='{{commodity.category_img}}' mode='aspectFill' data-items='{{item}}'></image>
+            <text class='classify-label'>{{commodity.category_name}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!-- <view class='classify-view'>
+      -->
+    <!-- <scroll-view scroll-x='true'  wx:for='{{bottom_category_list}}'>
+       <button class="classify-button" bindtap='classifyhide' id='{{index}}'>{{item.category_name}}</button>
+        <view class="{{bottom_category_show[index]?'classify-commodity-view':'hide'}}">
+          <view class="classify-commodity-item-view" wx:for='{{item.sub_category_list}}' wx:key='{{commodity.category_id}}' wx:for-item='commodity' bindtap='toCommoinfo'>
+
+            <image class='classify-commodity-image' src='{{commodity.category_img}}'></image>
+            <label class='classify-label'>{{commodity.category_name}}</label>
+          </view>
+        </view>
+      </scroll-view> -->
+    <!-- </view> -->
+
+  </scroll-view>
+</view>

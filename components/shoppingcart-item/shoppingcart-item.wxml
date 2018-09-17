@@ -1,0 +1,35 @@
+<view>
+  <scroll-view>
+    <block wx:for="{{items}}" wx:key="{{item.product_id}}">
+      <view class='mylikecommodityinfoline'></view>
+      <view class='mylikecommodityinfo' >
+        <checkbox-group class='mylikecommodityinfo-checkbox' bindchange='onCheckboxChange' data-item="{{item}}">
+          <checkbox checked='{{item.isSelect}}'></checkbox>
+        </checkbox-group>
+        <image class='mylikecommodityinfo-image' src='{{item.product_img}}' mode='aspectFit'  bindtap="onToCommodity" data-item="{{item}}"></image>
+        <view class='mylikecommodityinfo-view' >
+          <view class='mylikecommodityinfo-text-view'  bindtap="onToCommodity" data-item="{{item}}">
+            <text class='mylikecommodityinfo-text' >{{item.product_name}}</text>
+          </view>
+          <view class="mylikecommodityinfo-price-view" >
+          <view class='left'>
+            <text class='mylikecommodityinfo-price-text-icon'>￥</text>
+            <text class='mylikecommodityinfo-price-text'>{{item.price}}</text>
+            <text class='mylikecommodityinfo-originalprice-item1-view' wx:if="{{item.original_price>0}}">￥</text>
+            <text class='mylikecommodityinfo-originalprice-item2-view' wx:if="{{item.original_price>0}}">{{item.original_price}}</text>
+            </view>
+            <view class='right'>
+            <image class='mylikecommodityinfo-remove-image' src='/pages/images/shoppingcartremoveicon.png ' mode='aspectFill' bindtap='onRemoveItemClick' data-item="{{item}}"></image>
+            <view class="quantity">
+              <label class='pay-buy-count-label' bindtap='onLessenItemClick' data-item="{{item}}">-</label>
+              <input class="pay-buy-count" type="number" value="{{item.product_count}}" bindinput="inputBuyCount" />
+              <label class='pay-buy-count-label' bindtap='onAddItemClick' data-item="{{item}}">+</label>
+            </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+
+</view>

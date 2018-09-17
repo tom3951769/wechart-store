@@ -1,0 +1,81 @@
+{
+  "pages": [
+    "pages/text/text",
+    "pages/index/index",
+    "pages/mylikes/mylikes",
+    "components/coupon-item-bottom/coupon-item-bottom",
+    "pages/orderinfo/orderinfo",
+    "pages/checkthelogistics/checkthelogistics",
+    "pages/mybarelist/mybarelist",
+    "pages/mybare/mybare",
+    "pages/bare/bare",
+    "pages/ordertracking/ordertracking",
+    "pages/brand/brand",
+    "pages/mybrand/mybrand",
+    "pages/confirmorder/confirmorder",
+    "components/coupon-item/coupon-item",
+    "pages/myorder/myorder",
+    "components/float-tab-bottom/float-tab-bottom",
+    "pages/myselfinfo/myselfinfo",
+    "pages/coupon/coupon",
+    "pages/shoppingcart/shoppingcart",
+    "pages/found/found",
+    "pages/commodityinfo/commodityinfo",
+    "pages/classify/classify",
+    "components/searchcommodity-item/searchcommodity-item",
+    "pages/indextowleveldirectory/indextowleveldirectory",
+    "pages/pay/pay",
+    "pages/realnameauthentication/realnameauthentication",
+    "pages/addshippingaddress/addshippingaddress",
+    "pages/myshippingaddress/myshippingaddress",
+    "components/shippingaddress/shippingaddress",
+    "components/shoppingcart-item/shoppingcart-item",
+    "pages/seckill/seckill",
+    "components/commodity-item/commodity-item",
+    "pages/search/search",
+    "pages/systemsetting/systemsetting",
+    "pages/voucher/voucher",
+    "pages/logs/logs",
+    "pages/weburl/weburl",
+    "pages/navigateshoppingcat/navigateshoppingcat",
+    "pages/myoftenproduct/myoftenproduct",
+    "pages/moduleinfo/moduleinfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7D7D7B",
+    "selectedColor": "#EEC984",
+    "backgroundColor": "#232321",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/homeicon.png",
+        "selectedIconPath": "pages/images/selectedhomeicon.png"
+      },
+      {
+        "pagePath": "pages/found/found",
+        "text": "发现",
+        "iconPath": "pages/images/foundicon.png",
+        "selectedIconPath": "/pages/images/selectedfoundicon.png"
+      },
+      {
+        "pagePath": "pages/shoppingcart/shoppingcart",
+        "text": "购物车",
+        "iconPath": "pages/images/shoppingcarticon.png",
+        "selectedIconPath": "pages/images/selectedshoppingcarticon.png"
+      },
+      {
+        "pagePath": "pages/myselfinfo/myselfinfo",
+        "text": "我的",
+        "iconPath": "pages/images/myselficonselected.png",
+        "selectedIconPath": "pages/images/myselficon.png"
+      }
+    ]
+  }
+}

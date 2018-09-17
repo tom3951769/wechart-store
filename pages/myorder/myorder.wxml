@@ -1,0 +1,140 @@
+<view class="flaot-container">
+  <float-tab items="{{tabs}}" curTabId="{{curTabId}}" fixedBar="{{isShowFloatTab}}" bindtabclick="clickTab" />
+  <!-- <swiper style='height:1200rpx;margin-top:5%;' current="{{curTabId}}" display-multiple-items='1'>
+    <block >
+      <swiper-item catchtouchmove='catchTouchMove'> -->
+        <scroll-view scroll-y='true' style='height:100%;'>
+          <view wx:for="{{list}}" wx:key="{{id}}">
+            <view class='classify-view' wx:if="{{item.status==0}}">
+              <view class='order-title-view' bindtap='toOrderinfo' data-item="{{item}}">
+                <text>{{item.order_date}}</text>
+                <text style='color:rgba(230,187,118,1);'>待付款</text>
+              </view>
+              <view class='order-commodity' bindtap='toOrderinfo' data-item="{{item}}">
+                <view class='confirmorder-view'>
+                  <scroll-view scroll-x='true'>
+                    <view class='confirmorder-scroll-view'>
+                      <view class='brand' wx:for="{{item.product_list}}" wx:for-item="product" wx:key="id">
+                        <image class='confirmorder-scroll-view-item' src='{{product.product_img}}' mode='aspectFit' bindtap='toOrderinfo' data-item='{{item}}'></image>
+                      </view>
+                    </view>
+                  </scroll-view>
+                </view>
+                <view class='order-commodity-item'>
+                  <text class='button-text'>共{{item.product_count}}件</text>
+                  <image class='button-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+                </view>
+              </view>
+              <view class='order-title-view'>
+                <view class='order-button-view'>
+                  <button class='order-button' bindtap='toPay' data-item='{{item}}'>去支付</button>
+                  <button class='order-button1' bindtap='onCancelOrder' data-item="{{item}}">取消订单</button>
+                </view>
+                <view class='pay-view'>
+                  <text>支付金额： </text>
+                  <text style='font-size:16rpx;'>￥</text>
+                  <text>{{item.total_price}}</text>
+                </view>
+              </view>
+            </view>
+            <view class='classify-view' wx:if="{{item.status==1}}">
+              <view class='order-title-view' bindtap='toOrderinfo' data-item='{{item}}'>
+                <text>{{item.order_date}}</text>
+                <text style='color:rgba(230,187,118,1);'>待发货</text>
+              </view>
+              <view class='order-commodity' bindtap='toOrderinfo' data-item='{{item}}'>
+                <view class='confirmorder-view'>
+                  <scroll-view scroll-x='true'>
+                    <view class='confirmorder-scroll-view'>
+                      <view class='brand' wx:for="{{item.product_list}}" wx:for-item="product" wx:key="id">
+                        <image class='confirmorder-scroll-view-item' src='{{product.product_img}}' mode='aspectFit' bindtap='toOrderinfo' data-item='{{item}}'></image>
+                      </view>
+                    </view>
+                  </scroll-view>
+                </view>
+                <view class='order-commodity-item'>
+                  <text class='button-text'>共{{item.product_count}}件</text>
+                  <image class='button-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+                </view>
+              </view>
+              <view class='order-title-view'>
+                <view class='order-button-view'>
+                  <button class='order-button' bindtap='onCancelOrder' data-item="{{item}}">取消订单</button>
+                </view>
+                <view class='pay-view'>
+                  <text>支付金额： </text>
+                  <text style='font-size:16rpx;'>￥</text>
+                  <text>{{item.total_price}}</text>
+                </view>
+              </view>
+            </view>
+            <view class='classify-view' wx:if="{{item.status==2}}">
+              <view class='order-title-view' bindtap='toOrderinfo' data-item="{{item}}">
+                <text>{{item.order_date}}</text>
+                <text style='color:rgba(230,187,118,1);'>待收货</text>
+              </view>
+              <view class='order-commodity' bindtap='toOrderinfo' data-item="{{item}}">
+                <view class='confirmorder-view'>
+                  <scroll-view scroll-x='true'>
+                    <view class='confirmorder-scroll-view'>
+                      <view class='brand' wx:for="{{item.product_list}}" wx:for-item="product" wx:key="id">
+                        <image class='confirmorder-scroll-view-item' src='{{product.product_img}}' mode='aspectFit' bindtap='toOrderinfo' data-item='{{item}}'></image>
+                      </view>
+                    </view>
+                  </scroll-view>
+                </view>
+                <view class='order-commodity-item'>
+                  <text class='button-text'>共{{item.product_count}}件</text>
+                  <image class='button-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+                </view>
+              </view>
+              <view class='order-title-view'>
+                <view class='order-button-view'>
+                  <button class='order-button'>确认收货</button>
+                </view>
+                <view class='pay-view'>
+                  <text>支付金额： </text>
+                  <text style='font-size:16rpx;'>￥</text>
+                  <text>{{item.total_price}}</text>
+                </view>
+              </view>
+            </view>
+            <view class='classify-view' wx:if="{{item.status==3}}">
+              <view class='order-title-view' bindtap='toOrderinfo' data-item="{{item}}">
+                <text>{{item.order_date}}</text>
+                <text>已收货</text>
+              </view>
+              <view class='order-commodity' bindtap='toOrderinfo' data-item="{{item}}">
+                <view class='confirmorder-view'>
+                  <scroll-view scroll-x='true'>
+                    <view class='confirmorder-scroll-view'>
+                      <view class='brand' wx:for="{{item.product_list}}" wx:for-item="product" wx:key="id">
+                        <image class='confirmorder-scroll-view-item' src='{{product.product_img}}' mode='aspectFit' bindtap='toOrderinfo' data-item='{{item}}'></image>
+                      </view>
+                    </view>
+                  </scroll-view>
+                </view>
+                <view class='order-commodity-item'>
+                  <text class='button-text'>共{{item.product_count}}件</text>
+                  <image class='button-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+                </view>
+              </view>
+              <view class='order-title-view'>
+                <view class='order-button-view'>
+                  <button class='order-button' bindtap='toOderTracking' data-item="{{item}}">订单跟踪</button>
+                  <button class='order-button1' bindtap='onBuy' data-item="{{item}}">再次购买</button>
+                </view>
+                <view class='pay-view'>
+                  <text>支付金额： </text>
+                  <text style='font-size:16rpx;'>￥</text>
+                  <text>{{item.total_price}}</text>
+                </view>
+              </view>
+            </view>
+            <view class='fillnblock'></view>
+          </view>
+        </scroll-view>
+      <!-- </swiper-item>
+    </block>
+  </swiper> -->
+</view>

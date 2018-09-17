@@ -1,0 +1,52 @@
+
+.button-view1
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.button-name
+{
+  float: left;
+  left: 0;
+  height: 40rpx;
+}
+.button-text
+{
+  margin-right: 20rpx;
+  text-align: right;
+  font-size:22rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(162,162,162,1);
+}
+.button-image
+{
+  float: right;
+  right: 0;
+  height:29rpx;
+  width: 18rpx;
+}
+
+.button-view
+{
+  margin-left:5%; 
+  margin-right:5%;
+  height: 110rpx;
+  font-size:28rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(35,35,33,1);
+  background-color: white;
+  border-radius: 0rpx;
+  display: flex;
+  align-items: center;
+  flex-direction:row;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #F1F2F4;
+}
+.setting-button::after
+{
+  border:none;
+  border-bottom: 2rpx solid #F1F2F4;
+}

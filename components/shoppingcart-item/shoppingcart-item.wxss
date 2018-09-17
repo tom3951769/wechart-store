@@ -1,0 +1,196 @@
+.left
+{
+  
+  float: left;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.right
+{
+  margin-right: 5%;
+  float: right;
+  right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.mylikecommodityinfo-button-view {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+}
+/*  重写 checkbox 样式  */
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input{
+  margin-left:5%; 
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 30rpx; /* 背景的宽 */
+   height: 30rpx; /* 背景的高 */
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: none;
+   background: black
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   width: 30rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 30rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   text-align: center;
+   font-size:30rpx; /* 对勾大小 30rpx */
+   color:#fff; /* 对勾颜色 白色 */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+
+.mylikecommodityinfo-checkbox
+{
+  margin-left:5%; 
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mylikecommodityinfo-remove-image
+{
+  margin-left: 50rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+.quantity {
+  width: 172rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1rpx solid #dedede;
+}
+
+.pay-buy-count-label {
+  text-align: center;
+  width:33%;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.pay-buy-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 60rpx;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(0, 0, 0, 1);
+}
+
+.mylikecommodityinfo-button {
+  height: 46rpx;
+  width: 134rpx;
+  font-size: 22rpx;
+  font-family: PingFang-SC-Bold;
+  color: rgba(255, 255, 255, 1);
+  background-color: #e88863;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mylikecommodityinfo-view {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mylikecommodityinfo-icon {
+  margin-left: 50%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.mylikecommodityinfo-originalprice-view {
+  /* margin-left: 5%;
+  display: inline;
+  text-decoration:line-through; */
+  margin-left: 5%;
+  display: flex;
+  text-decoration: line-through;
+  flex-direction: row;
+  align-items: bottom;
+  justify-items: bottom;
+}
+
+.mylikecommodityinfo-originalprice-item1-view {
+  margin-left: 20rpx;
+  text-decoration: line-through;
+  font-size: 20rpx;
+  color: #a0a0a0;
+}
+
+.mylikecommodityinfo-originalprice-item2-view {
+  text-decoration: line-through;
+  font-size: 26rpx;
+  color: #a0a0a0;
+}
+
+.mylikecommodityinfo-price-view {
+  justify-content: space-between;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.mylikecommodityinfo-price-text
+{
+  font-size: 28rpx;
+  color: #181818;
+  font-family: PingFang-SC-Medium;
+}
+
+.mylikecommodityinfo-price-text-icon {
+  font-size: 20rpx;
+  color: #181818;
+  font-family: PingFang-SC-Medium;
+}
+
+.mylikecommodityinfo-text-view {
+  width: 425rpx;
+  font-size: 26rpx;
+  font-family: PingFang-SC-Medium;
+}
+
+.mylikecommodityinfoline {
+  height: 16rpx;
+  background-color: #F3F4F6;
+}
+
+.mylikecommodityinfo-image {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 178rpx;
+  width: 250rpx;
+}
+
+.mylikecommodityinfo {
+  height: 275rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.mylike-scroll-view {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #f1f2f4;
+}

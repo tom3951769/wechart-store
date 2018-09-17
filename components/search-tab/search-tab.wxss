@@ -1,0 +1,98 @@
+@import "tab-item/tab-item.wxss";
+
+
+.classifyimage {
+  margin-left:3%; 
+  width: 80rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(161, 161, 159, 1);
+}
+.searchinput {
+  padding-left: 72rpx;
+  height: 51rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(161, 161, 159, 1);
+  width: 100%;
+  z-index: 1;
+}
+
+.searchview-item {
+  position: relative;
+  background: #f6f6f6;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.searchimage {
+  position: absolute;
+  left: 32rpx;
+  height: 26rpx;
+  width: 27rpx;
+}
+.searchview-item-view {
+  display: flex;
+  margin-top:20rpx;
+  margin-left: 5%;
+  margin-right: 3%;
+  align-items: center;
+  background-color: white;
+}
+.float_container {
+    position: fixed;
+    width: 100%;
+    /*悬停关键样式*/
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 160rpx;
+    background-color: #ffffff;
+}
+
+.ml_float_tab{
+   position: fixed;
+    width: 100%;
+    /*悬停关键样式*/
+     background-color: #ffffff;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    height: 160rpx;
+    box-shadow:6rpx 6rpx 6rpx 6rpx #E0E0E0;
+}
+
+.tab_container {
+    height: 96rpx;
+    display: flex;
+    flex-direction: row;
+    margin: 32rpx 32rpx 32rpx 32rpx;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+.tab_item {
+    display: flex;
+    flex-direction: row;
+    height: 96rpx;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.tab_line {
+    height: 40rpx;
+    width: 1px;
+    z-index: 0;
+    background-color: #E5E5E5;
+}
+
+.tab_bottom_line {
+    height: 20rpx;
+    background-color: #F5F5F5;
+}

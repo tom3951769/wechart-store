@@ -1,0 +1,113 @@
+<!--pages/orderinfo/orderinfo.wxml-->
+<view>
+  <view class='body' >
+    <view class='fillnblock'></view>
+    <view class="button-view">
+      <text class='button-name'>订单号：{{json.order_id}}</text>
+      <view class="button-view1" wx:if="{{json.status==0}}">
+        <text wx:if='isShowText' class='button-text1' style='font-family:PingFang-SC-Medium;color:rgba(230,187,118,1);'>未付款</text>
+      </view>
+      <view class="button-view1" wx:if="{{json.status==1}}">
+        <text wx:if='isShowText' class='button-text1' style='font-family:PingFang-SC-Medium;color:rgba(230,187,118,1);'>待发货</text>
+      </view>
+      <view class="button-view1" wx:if="{{json.status==2}}">
+        <text wx:if='isShowText' class='button-text1' style='font-family:PingFang-SC-Medium;color:rgba(230,187,118,1);'>待收货</text>
+      </view>
+      <view class="button-view1" wx:if="{{json.status==3}}">
+        <text wx:if='isShowText' class='button-text1' style='font-family:PingFang-SC-Medium;'>已收货</text>
+      </view>
+    </view>
+    <view class='bg-row1-item'>
+      <image class="bg-row1" src="/pages/images/addressicon.png" mode='aspectFill'></image>
+      <view class='bg-row2'>
+        <view class='bg-row2-row1'>
+          <text>{{json.contacts}}</text>
+          <text style='margin-left: 40rpx;'>{{json.mobile}}</text>
+          <!-- <view class='default-text-checked-view'>
+            <label class='default-text-checked'> 默认 </label>
+          </view> -->
+        </view>
+        <view class='bg-row2-row2'>
+          <text>{{json.address}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='dashed'></view>
+    <view class='fillnblock'></view>
+    <view class="button-view" bindtap='toPKGList' data-item="{{json}}">
+      <text class='button-name'>包裹数</text>
+      <view class="button-view1">
+        <text wx:if='isShowText' class='button-text1' style='font-family:PingFang-SC-Medium;color:rgba(230,187,118,1);'>{{json.pkg_count}}</text>
+      </view>
+    </view>
+    <view wx:for="{{json.pkg_list}}" wx:for-item="pkg">
+      <view class="button-view">
+        <text class='button-name'>包裹{{pkg.pkg_id}}</text>
+        <view class="button-view1" wx:if="{{pkg.status==0}}">
+          <text wx:if='isShowText' class='button-text1' style='font-family:PingFang-SC-Medium;color:rgba(230,187,118,1);'>未付款</text>
+        </view>
+        <view class="button-view1" wx:if="{{pkg.status==1}}">
+          <text wx:if='isShowText' class='button-text1' style='font-family:PingFang-SC-Medium;color:rgba(230,187,118,1);'>待发货</text>
+        </view>
+        <view class="button-view1" wx:if="{{pkg.status==2}}">
+          <text wx:if='isShowText' class='button-text1' style='font-family:PingFang-SC-Medium;color:rgba(230,187,118,1);'>待收货</text>
+        </view>
+        <view class="button-view1" wx:if="{{pkg.status==3}}">
+          <text wx:if='isShowText' class='button-text1' style='font-family:PingFang-SC-Medium;'>已收货</text>
+        </view>
+      </view>
+      <view class='bg-item'>
+        <view class='confirmorder-view'>
+          <scroll-view scroll-x='true'>
+            <view class='confirmorder-scroll-view'>
+              <view class='brand' wx:for="{{pkg.product_list}}" wx:for-item="product">
+                <image class='confirmorder-scroll-view-item' src='{{product.product_img}}' mode='aspectFit' data-items='{{item}}'></image>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+        <view class='button-view'>
+          <text class='button-text'>共{{pkg.product_count}}件</text>
+          <image class='button-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFit'></image>
+        </view>
+      </view>
+    </view>
+    <view class='fillnblock'></view>
+    <view class="button-view"  bindtap='ontoNavigateUrl' data-items='{{json}}'>
+      <view class='button-name-view'>
+        <text class='button-name'>支付方式</text>
+      </view>
+      <view class="button-view1">
+        <text wx:if='isShowText' class='button-text' style='font-size:22rpx;'>微信支付</text>
+        <image class='button-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFit'></image>
+      </view>
+    </view>
+    <view class="button-view" bindtap='ontoNavigateUrl' data-items='{{json}}'>
+      <text class='button-name'>商品金额</text>
+      <view class="button-view1">
+        <text wx:if='isShowText' class='button-text1'>￥{{json.total_price}}</text>
+      </view>
+    </view>
+    <view class="button-view" bindtap='ontoNavigateUrl' data-items='{{json}}'>
+      <text class='button-name'>运费</text>
+      <view class="button-view1">
+        <text wx:if='isShowText' class='button-text1'>+￥{{json.freight}}</text>
+      </view>
+    </view>
+    <view class="button-view" bindtap='ontoNavigateUrl' data-items='{{json}}'>
+      <text class='button-name'>优惠</text>
+      <view class="button-view1">
+        <text wx:if='isShowText' class='button-text1'>-￥{{json.discount}}</text>
+      </view>
+    </view>
+    <view class='pay-content'>
+      <view class='pay-content-text'>实付款：
+        <text style='color:#EB3736;'>￥{{json.total_price-json.discount}}</text>
+      </view>
+      <view class='pay-time-text'>
+        下单时间：
+        <text>{{json.create_time}}</text>
+      </view>
+    </view>
+  </view>
+</view>

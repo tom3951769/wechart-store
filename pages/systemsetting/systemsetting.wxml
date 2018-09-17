@@ -1,0 +1,16 @@
+<view class='setting'>
+  <view class='setting-view' wx:for='{{settingbutton}}' wx:key='{{item.id}}'>
+    <view class="setting-button-view" bindtap='toNavigateUrl' id='{{item.id}}' data-items='{{item}}' >
+      <text class='setting-text'>{{item.nodeName}}</text>
+      <image class='setting-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+    </view>
+  </view>
+    <view class='fillnblock'></view>
+    <view class='setting-view' wx:for='{{settingbutton1}}' wx:key='{{item.id}}'>
+    <view class="setting-button-view" bindtap='toNavigateUrl' id='{{item.id}}'>
+      <text class='setting-text'>{{item.nodeName}}</text>
+      <image class='setting-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+    </view>
+  </view>
+  <view class="btn" bindtap="hiddeAddToShoppingCart">退出当前账号</view>
+</view>

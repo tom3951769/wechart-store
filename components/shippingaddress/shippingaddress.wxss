@@ -1,0 +1,110 @@
+/* components/shippingaddress/shippingaddress.wxss */
+
+
+.default-right
+{
+
+}
+.address-item-view
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.address-view1
+{
+  height: 200rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.address-view
+{
+  height: 250rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.line
+{
+  margin-top:3%; 
+  border-bottom: 1rpx  solid #F4F4F4;
+}
+.line::after
+{
+  border: none;
+}
+.line-view
+{
+  height: 16rpx;
+  background-color: #F4F4F4;
+}
+.default-bg-view
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3%;
+  height: 60rpx;
+}
+.address-bg-view
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.address-checkbox
+{
+  margin-left:150rpx; 
+}
+.default-text-checked-view
+{
+  text-align: center;
+  width: 100rpx;
+  height: 40rpx;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.default-text-checked
+{
+  font-size:28rpx;
+  font-family:PingFang-SC-Medium;
+  color: white;
+}
+.address-name-text
+{
+  font-size:32rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(102,102,102,1);
+}
+.address-phone-text
+{
+  margin-left: 20rpx;
+  font-size:32rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(102,102,102,1);
+}
+.image-icon
+{
+  width: 32rpx;
+  height:32rpx;
+}
+.address-text
+{
+  width: 400rpx;
+  font-size:28rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(102,102,102,1);
+  margin-left:20rpx;
+}
+
+.default-text 
+{
+  font-size:26rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(102,102,102,1);
+}

@@ -1,0 +1,8 @@
+<!--pages/mybrand/mybrand.wxml-->
+
+<view class='brand-bg'>
+  <view class='brand-view' wx:for="{{list}}" wx:key="id"  bindtap='toBrand' data-item="{{item}}">
+    <image class='brand-img' src='{{item.brand_img}}' mode='aspectFill'></image>
+    <text class='brand-text'>{{item.brand_name}}</text>
+  </view>
+</view>

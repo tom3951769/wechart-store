@@ -1,0 +1,181 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view>
+  <scroll-view class='scroll-view'>
+    <view class='swiper-view'>
+      <swiper class='swiper' indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+        <block wx:for="{{list.img_list}}" wx:key="{{id}}" wx:for-item="img_list_item">
+          <swiper-item>
+            <image class='swiper-item-image' src='{{img_list_item.img}}' mode='aspectFit'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="{{reserve_end_date_status==1?'noreserve-view':'reserve-view'}}" wx:if="{{list.reserve_flag==1}}">
+        <view class='reserve-text-view'>
+          <text class='reserve-text-h1'>{{list.reserve_name}}</text>
+          <text class='reserve-text-h2'>（结束后恢复原价,5-8个工作日发货）</text>
+        </view>
+        <text class='reserve-text-h3'>预定已截至</text>
+      </view>
+      <view class="{{flashsale_end_date_status==1?'noflashsale_view':'flashsale_view'}}" wx:if="{{list.flashsale_flag==1}}" >
+        <view class='reserve-text-view'>
+          <text class='reserve-text-h1'>闪购价</text>
+           <text class='reserve-text-h2'>：￥{{list.flashsale_price}}</text>
+        </view>
+        <text class='reserve-text-h3' wx:if="{{flashsale_end_date_status==0}}" >距离结束仅剩{{list.hour}}:{{list.minute}}:{{list.second}}</text>
+        <text class='reserve-text-h3' wx:if="{{flashsale_end_date_status==1}}" >闪购已结束</text>
+      </view>
+    </view>
+    <view>
+      <view class='name-view'>
+        <text class='name-text' selectable='true'>{{list.product_name}}</text>
+      </view>
+
+      <view class='price-view'>
+        ￥
+        <text class='price-label'>{{list.price}}</text>
+      </view>
+      <!--  -->
+      <!-- wx:if="{{bare_flag==1}}" -->
+      <view class='bare-view' wx:if="{{list.bare_flag==1}}">
+        <view class='bare-text-view'>
+          <text class='bare-view-text'>助力参考价</text>
+
+          <view class='price-view'>
+            ￥
+            <text class='price-label'>{{list.bare_price}}</text>
+          </view>
+        </view>
+        <view class='bare-button-view'>
+          <button class='bare-view-button'  bindtap='toBare' data-item="{{list}}">专享价购买</button>
+        </view>
+      </view>
+      <!--  -->
+      <view class='originalprice-view' wx:if="{{list.original_price>0}}">
+        ￥
+        <label class='originalprice-label'>{{list.original_price}}</label>
+      </view>
+      <view class='property-view'>
+        <view class='mark-view'>
+          <image class='button-mark' src='/pages/images/commoditymarkicon.png' mode='aspectFill'></image>
+          <text class='mark-text'>正品保障</text>
+        </view>
+        <view class='mark-view' wx:if="{{list.tax_flag==0}}">
+          <image class='button-mark' src='/pages/images/commoditymarkicon.png' mode='aspectFill'></image>
+          <text class='mark-text'>免税</text>
+        </view>
+        <view class='mark-view' wx:if="{{list.freight_flag==0}}">
+          <image class='button-mark' src='/pages/images/commoditymarkicon.png' mode='aspectFill'></image>
+          <text class='mark-text'>包邮</text>
+        </view>
+      </view>
+      <view class='fillnblock'></view>
+      <view>
+        <view class="button-view" bindtap='toNavigateUrl' data-tourl='{{list.transit_parity_url}}' wx:if="{{list.transit_parity_flag!=0}}">
+          <view class='button-left'>
+            <image class='button-us' src='{{list.transit_parity_logo}}' mode='aspectFit'></image>
+            <text class='button-name'>{{list.transit_parity_country}}{{list.transit_parity_text}}</text>
+          </view>
+          <view class="button-right">
+            <image class='button-arrows' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+          </view>
+        </view>
+      </view>
+      <view>
+        <view class="button-view" bindtap='toNavigateUrl' data-tourl='{{list.inner_parity_url}}' wx:if="{{list.inner_parity_flag!=0}}">
+          <view class='button-left'>
+            <image class='button-us' src='{{list.inner_parity_logo}}' mode='aspectFit'></image>
+            <text class='button-name'>{{list.inner_parity_country}}{{list.inner_parity_text}}</text>
+          </view>
+          <view class="button-right">
+            <image class='button-arrows' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+          </view>
+        </view>
+      </view>
+      <view class='fillnblock'></view>
+      <view>
+        <view class="button-view" bindtap='toNavigateUrl' data-tourl='{{list.freight_url}}'>
+          <view>
+            <text>运费：￥{{list.freight}} </text>
+            <text>运输重量：{{list.weight}}</text>
+            <text class='gray'>{{list.freight_text}}</text>
+          </view>
+          <view class="button-right">
+            <image class='button-arrows' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+          </view>
+        </view>
+      </view>
+      <view>
+        <view class="button-view" bindtap='toNavigateUrl' data-tourl='{{list.tax_rate_url}}'>
+          <view class='button-left'>
+            <text>{{list.tax_rate_text}}</text>
+          </view>
+          <view class="button-right">
+            <image class='button-arrows' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+          </view>
+        </view>
+      </view>
+      <view class='fillnblock'></view>
+      <view>
+        <view class="button-view" bindtap="addCar" data-tourl='{{list.tax_rate_url}}'>
+          <view class='button-left'>
+            <text>已选</text>
+          </view>
+          <view class="button-right">
+            <text style=' color: #A0A0A0;margin-right:20rpx;'>{{product_count}}件</text>
+            <image class='button-arrows' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="health-view">
+      <view class='fillnblock'></view>
+      <view class="swiper-tab-view">
+        <view class="swiper-tab" wx:for="{{swipertabdata}}" wx:for-index="index" wx:key="id">
+          <view class="swiper-tab-item {{currentTab==index?'active':''}}">
+            <view class="{{currentTab==index?'activeborder':''}}" data-current="{{item.index}}" id="swiper-tab-item-{{item.index}}" bindtap="clickTab" data-items="{{list.detail_content}}">{{item.name}}</view>
+            <view class='fillnblock1'></view>
+          </view>
+        </view>
+      </view>
+      <swiper current="{{currentTab}}" class="health-swiper" display-multiple-items="1" bindchange="swiperTab" data-items="{{list.detail_content}}">
+        <block>
+          <swiper-item>
+            <scroll-view scroll-y="true" style="height:100%;">
+              <view class="wxParse">
+                <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+              </view>
+            </scroll-view>
+          </swiper-item>
+        </block>
+        <block>
+          <swiper-item>
+            <view>
+              <image class="health-image" src="{{list.thumb}}" mode='aspectFill'></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </scroll-view>
+  <!-- <view class='Fill-view'></view> -->
+  <!-- 底部悬浮栏 -->
+  <view class="detail-nav" hidden='{{ isShowFloatTab }}'>
+    <view class='car-view'  bindtap='addlike'>
+      <image class='like-image' src="/pages/images/likeicon.png" mode='aspectFill' wx:if="{{follow_flag}}" />
+      <image class='button-image'  src="/pages/images/addlikeicon.png" wx:if="{{!follow_flag}}" />
+      <label class='button-label'>收藏</label>
+    </view>
+    <view class='car-view' bindtap="toCar">
+      <view class='carcount' wx:if="{{car_count>0}}">{{car_count}}</view>
+      <image class='button-image'  src="/pages/images/commoditycarticon.png" />
+      <label class='button-label'>购物车</label>
+    </view>
+    <!-- {{button_disable==true?'button-gainsboro':'button-green'}} -->
+    <button class="button-green"  bindtap="addCar" wx:if='{{button_disable==0}}'>加入购物车</button>
+    <button class="button-red" bindtap="immeBuy" wx:if='{{button_disable==0}}'>立即购买</button>
+    <button style="background-color:#B0B0B0;color: white;" disabled='true' wx:if='{{button_disable==1}}' >加入购物车</button>
+    <button style="background-color:#B0B0B0;color: white;" disabled='true' wx:if='{{button_disable==1}}' >立即购买</button>
+  </view>
+  <float-tab-bottom items="{{list}}" buycount="{{product_count}}" selecteproperty="{{selecte_property}}" bindaddBuyCountClick="addBuyCountClick" bindlessenBuyCountClick="lessenBuyCountClick" fixedBar="{{addToShoppingCartHidden}}" bindinputBuyCount="inputBuyCount" isAddCart="{{isAddCart}}"
+    bindaddToShoppingCart="addToShoppingCart" bindonCancel="onCancel" bindonSelected="onSelected" />
+</view>

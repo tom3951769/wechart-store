@@ -1,0 +1,27 @@
+<import src="tab-item/tab-item.wxml" />
+<view class="ml_float_tab">
+  <view class="tab_container">
+    <block wx:for="{{items}}" wx:for-item="item" wx:key="{{item.tag_id}}" >
+      <view class="tab_item" bindtap="onTabItemClick" wx:key="{{item.tag_id}}" data-tabs="{{item}}">
+        <view class="tab_item">
+          <view class="{{curTabId==item.tag_id?'tab_item_text_select':'tab_item_text_nor'}}">{{item.tag_name}}</view>
+          <view wx:if="{{curTabId==item.tag_id}}" class="tab_item_bottom_line"></view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view wx:if="{{showFixedBar}}" class="float_container">
+  <view class="ml_float_tab">
+    <view class="tab_container">
+      <block wx:for="{{items}}" wx:for-item="item" wx:key="{{item.tag_id}}">
+        <view class="tab_item" bindtap="onTabItemClick" wx:key="{{item.tag_id}}" data-tabs="{{item}}">
+          <view class="tab_item">
+            <view class="{{curTabId==item.tag_id?'tab_item_text_select':'tab_item_text_nor'}}">{{item.tag_name}}</view>
+            <view wx:if="{{curTabId==item.tag_id}}" class="tab_item_bottom_line"></view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

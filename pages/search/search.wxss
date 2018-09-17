@@ -1,0 +1,105 @@
+/* pages/search/search.wxss */
+page{
+background: #F1F2F4;
+}
+
+.search-hot-delete-img
+{
+  margin-right: 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.search-hot-delete
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+.searchcontent-item
+{
+  flex-wrap: wrap;
+  display:flex;
+  width: 100%;
+}
+
+.searchcontent-item-view
+{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 22rpx;
+  width: 33%;
+}
+.searchcontent-item-text
+{
+  margin: 5% auto auto auto;
+  width: 213rpx;
+  height: 49rpx;
+  background-color: #F4F4F4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.searchtitle
+{
+  margin-left:5%;
+  font-size:24rpx;
+  font-family:PingFang-SC-Bold;
+  color:rgba(0,0,0,1);
+}
+.searchview-bg
+{
+  height: 100%;
+  background-color: white;
+}
+.searchcontent
+{
+  margin-top:4%; 
+  height: 200rpx;
+  background-color: white;
+}
+.searchview
+{
+  height: 70rpx;
+  background-color: white;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #F1F2F4;
+}
+.searchview-item-view {
+  display: flex;
+  margin-left: 5%;
+  margin-right: 3%;
+  align-items: center;
+  background-color: white;
+}
+.searchview-item {
+  position: relative;
+  background: #f6f6f6;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.searchimage {
+  position: absolute;
+  left: 32rpx;
+  height: 26rpx;
+  width: 27rpx;
+}
+.classifyimage {
+  margin-left:3%; 
+  width: 80rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(161, 161, 159, 1);
+}
+.searchinput {
+  padding-left: 72rpx;
+  height: 51rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(161, 161, 159, 1);
+  width: 100%;
+  z-index: 1;
+}

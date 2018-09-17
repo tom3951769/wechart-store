@@ -1,0 +1,78 @@
+/* components/searchcommodity-item/searchcommodity-item.wxss */
+
+page
+{
+  background-color: #EFEFF4;
+}
+.classify-view
+{
+
+}
+.searchcommodity-bg
+{
+  margin-left: 3%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.searchcommodity-description
+{
+  width: 323rpx;
+  font-size:22rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(35,35,33,1);
+  white-space:nowrap;
+  height: 60rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+}
+.searchcommodity-view
+{
+  padding: 2%;
+  margin:1% 1% 0 0%;
+  display: flex;
+  flex-direction: column;
+  align-items:left;
+  justify-content: center;
+  background-color: white;
+  width: 44%;
+}
+.searchcommodity-image
+{
+  width: 323rpx;
+  height: 323rpx;
+}
+.mylikecommodityinfo-price-view
+{
+  margin-top:2%; 
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+}
+.mylikecommodityinfo-originalprice-view
+{
+  margin-left: 5%;
+  display: inline;
+  text-decoration:line-through;
+}
+.mylikecommodityinfo-price-text
+{
+  font-size: 28rpx;
+  font-family:PingFang-SC-Medium;
+  color:#A5824D;
+}
+.mylikecommodityinfo-price-text-icon
+{
+  font-size: 28rpx;
+  color:#A5824D;
+  font-family:PingFang-SC-Medium;
+}
+.mylikecommodityinfo-text-view
+{
+  width: 425rpx;
+  font-size:26rpx;
+  font-family:PingFang-SC-Medium;
+}

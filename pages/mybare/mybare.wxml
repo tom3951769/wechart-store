@@ -1,0 +1,54 @@
+<!--pages/mybare/mybare.wxml-->
+<!--pages/yujian1/yujian1.wxml-->
+<text class='title_text' wx:if='{{list.status==-99}}'>活动未开始，请分享给好友激活助力购.</text>
+<text class='title_text' wx:if='{{list.status==1}}'>助力成功，请在{{list.order_deadline}}前完成下单</text>
+<text class='title_text' wx:if='{{list.status==0}}'>进行中，一共需邀请{{list.need_help}}位好友，还需邀请{{list.surplus_help}}好友助力,请在{{list.failure_time}}前完成助力</text>
+<view class='time_view' wx:if='{{list.status==1}}'>
+  <text>剩余</text>
+  <view class='time_style'>{{list.hour}}</view>:
+  <view class='time_style'>{{list.minute}}</view>:
+  <view class='time_style'>{{list.second}}</view>
+  <text>结束</text>
+</view>
+<view class='product_topView'>
+  <view>
+    <image class='product_image' src='{{list.product_img}}' mode='aspectFit'></image>
+  </view>
+  <view class='product_content_topView'>
+    <text class='product_title'>{{list.product_title}}</text>
+    <view class='product_bottom'>
+      <view>
+        <text class='product_money'>￥{{list.bare_price}}</text>
+        <text class='product_delet'>￥{{list.price}}</text>
+      </view>
+      <button class='goPay' bindtap='goPayTap' wx:if='{{list.status==1}}'>去下单</button>
+      <button class='goPay'  open-type='share' wx:if='{{list.status==0}}'>继续邀请</button>
+      <button class='goPay' open-type='share' wx:if='{{list.status==-99}}'>继续邀请</button>
+    </view>
+  </view>
+</view>
+<view class='product_centerView'>
+  <text class='title_text2'>助力小队</text>
+  <view class='line'></view>
+  <scroll-view scroll-x="true">
+    <view class='iconScrollerView'>
+      <view class='icon_margin' wx:for="{{list.frend_list}}">
+        <image class='user_icon' src='' mode='aspectFit'></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<text class='title_text3'>好友助力详情</text>
+<view class='bottom_userList'>
+  <view class='user_cell' wx:for="{{list.record_list}}">
+    <view class='user_cell2'>
+      <image class='user_icon2' src='{{item.headimgurl}}' mode='aspectFit'></image>
+      <view class='user_info'>
+        <text class='nameDec'>{{item.nickname}}</text>
+        <text class='timeDec'>{{item.time_desc}}</text>
+      </view>
+    </view>
+    <view class='nameDec' wx:if="{{item.status==1}}">助力成功</view>
+    <view class='nameDec' wx:else>助力失败</view>
+  </view>
+</view>

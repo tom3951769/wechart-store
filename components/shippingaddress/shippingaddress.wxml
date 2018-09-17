@@ -1,0 +1,30 @@
+<checkbox-group>
+  <view wx:for="{{items}}" wx:key="{{item.address_id}}" >
+    <view wx:if="{{item.isShowline}}" class='line-view'></view>
+    <view class="address-view">
+      <view>
+        <text class='address-name-text'>{{item.contacts}}</text>
+        <text class='address-phone-text'>{{item.mobile}}</text>
+      </view>
+      <view class='address-bg-view'>
+        <view class='address-item-view'>
+          <view wx:if="{{item.is_default==1}}" class='default-text-checked-view'>
+            <label class='default-text-checked'> 默认 </label>
+          </view>
+          <text class='address-text'>{{item.full_address}}</text>
+        </view>
+        <checkbox class='wx-checkbox-input' checked='{{item.isSeleted}}' bindtap='seletedAddress' data-item='{{item}}'></checkbox>
+      </view>
+      <view class='line'></view>
+      <view class='default-bg-view'>
+        <checkbox class='default-text' checked='{{item.is_default==1}}' bindtap='setDefultAddress' data-item='{{item}}'>设为默认</checkbox>
+        <view class='default-right'>
+          <image class='image-icon' style='margin-left:250rpx;' src='/pages/images/addressredacticon.png' mode='aspectFill' bindtap='redactAddress' data-item='{{item}}'></image>
+          <text class='default-text' style='margin-left:15rpx;' bindtap='redactAddress' data-item='{{item}}'>编辑</text>
+          <image class='image-icon' style='margin-left:25rpx;' src='/pages/images/shoppingcartremoveicon.png ' mode='aspectFill' bindtap='removeAddress' data-item='{{item}}'></image>
+          <text class='default-text' style='margin-left:15rpx;' bindtap='removeAddress' data-item='{{item}}'>删除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</checkbox-group>

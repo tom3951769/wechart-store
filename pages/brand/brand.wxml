@@ -1,0 +1,16 @@
+<!--pages/brand/brand.wxml-->
+<view>
+  <view class='bg' >
+    <image class='img' src='{{list.brand_img}}' mode='aspectFill'></image>
+    <view class='title-view'>
+      <text class='left'>{{list.brand_name}}</text>
+      <view class='right'>
+        <button class='brand-btn' wx:if="{{follow_status==0}}" bindtap='addLike' data-item='{{list}}'>关注</button>
+        <button class='brand-btn-follow'  bindtap='addLike' data-item='{{list}}' wx:else>已关注</button>
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y='true'>
+    <searchcommodity-item items='{{list.product_list}}' bindClick="onClick" />
+  </scroll-view>
+</view>

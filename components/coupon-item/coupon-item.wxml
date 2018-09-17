@@ -1,0 +1,26 @@
+<!--components/conpon-item/conpon-item.wxml-->
+
+<view class='conpon-bg' wx:for="{{items}}">
+  <image class='conpon-image' src="{{item.status==0?'/pages/images/unusedcoupon.png':'/pages/images/useconpon.png'}}"></image>
+  <view class='conpon-view'>
+    <text class='conpon-name'>{{item.coupon_name}}</text>
+    <view class='conpon-money-view'>
+      <text class='conpon-money'>￥{{item.coupon_money}}</text>
+      <text class='conpon-money-description'>(满{{item.min_order_money}}使用)</text>
+    </view>
+    <text class='coupon-desc'>{{item.coupon_desc}}</text>
+    <text class='brief-desc'>注：{{item.brief_desc}}</text>
+  </view>
+  <view class='button-view' wx:if="{{item.status==0}}">
+    <text style='width:100rpx;margin-left:30rpx;'>立即使用</text>
+    <text class='button-time'>{{item.effective_time}}-{{item.expriry_time}}</text>
+  </view>
+  <view class='button-view' wx:if="{{item.status==1}}">
+    <text style='width:100rpx;margin-left:30rpx;'>已经使用</text>
+    <text class='button-time'>{{item.effective_time}}-{{item.expriry_time}}</text>
+  </view>
+  <view class='button-view' wx:if="{{item.status==-1}}">
+    <text style='width:100rpx;margin-left:30rpx;'>已经过期</text>
+    <text class='button-time'>{{item.effective_time}}-{{item.expriry_time}}</text>
+  </view>
+</view>

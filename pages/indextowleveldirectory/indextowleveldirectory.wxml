@@ -1,0 +1,24 @@
+<!--pages/indextowleveldirectory/indextowleveldirectory.wxml-->
+<view class='body'>
+  <view wx:for="{{list.recomm_module_list}}">
+    <view class='fillnblock'></view>
+    <view class='hot-view-bg'>
+      <view class='hot-view'>
+        <view class='hot-row-view'>
+          <image class='hot-icon' src='/pages/images/hoticon.png' mode='aspectFill'></image>
+          <text class='hot-name'>{{item.module_name}}</text>
+        </view>
+        <text class='querybuttom' bindtap='toModuleinfo' data-items='{{item}}' >查看更多</text>
+      </view>
+      <image class="health-image" src="{{item.banner_img}}" mode='aspectFill' bindtap='toModuleinfo' data-items='{{item}}'></image>
+    </view>
+  </view>
+    <scroll-view scroll-x>
+      <view class='classify-commodity-view'>
+        <view class='classify-commodity-item-view' wx:for="{{list.category_list}}" wx:for-item='commodity' bindtap='toCategoryinfo' data-items='{{commodity}}'>
+          <image class='classify-commodity-image' src='{{commodity.category_img}}' mode='aspectFill' data-items='{{item}}'></image>
+          <text class='classify-label'>{{commodity.category_name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+</view>

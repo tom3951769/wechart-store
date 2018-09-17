@@ -1,0 +1,27 @@
+<view>
+  <scroll-view class='classify-scroll-view'>
+    <view class='wecharticon-view'>
+      <image class='wechart-bg' src='/pages/images/myselfbg.png' mode='aspectFill'></image>
+      <view class='userinfo-view'>
+        <image class='wecharticon-image' src='{{userinfo.avatarUrl}}'></image>
+        <label class='wechartname-label'>{{userinfo.nickName}}</label>
+      </view>
+      <!-- <image class='wechartsetting-image' bindtap='toSetting' src='/pages/images/myselfsettingicon.png' mode='aspectFill'></image> -->
+    </view>
+    <!-- <button class="classify-button" bindtap='toMyorder'>我的订单</button> -->
+    <button-item items="{{myOrderButton}}" bindtoNavigateUrl='toMyorder'></button-item>
+    <view class="classify-commodity-view">
+      <view class="classify-commodity-item-view" bindtap='toOrder' wx:for='{{myselfnavigation}}' wx:key='{{commodity.id}}' wx:for-item='commodity' data-item='{{commodity}}'>
+        <image class='classify-commodity-image' src='{{commodity.url}}'></image>
+        <label class='classify-label'>{{commodity.name}}</label>
+      </view>
+    </view>
+    <view class='fillnblock'></view>
+    <view class='invitefriend-view'>
+      <button class='invitefriend-button'>邀请好友,立得礼卷</button>
+      <image class='seckill-commodity-tab' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+    </view>
+    <view class='fillnblock'></view>
+    <button-item items="{{classify}}" bindtoNavigateUrl='toNavigateUrl'></button-item>
+  </scroll-view>
+</view>

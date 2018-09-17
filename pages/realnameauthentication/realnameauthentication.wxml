@@ -1,0 +1,4 @@
+<!--pages/realnameauthentication/realnameauthentication.wxml-->
+<shippingaddress items="{{items}}" />
+<view class="btn" bindtap="toAddrealnameauthetication">新增实名认证</view>
+

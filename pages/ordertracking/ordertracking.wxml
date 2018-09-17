@@ -1,0 +1,39 @@
+<!--pages/ordertracking/ordertracking.wxml-->
+<view>
+  <view class='classify-view' wx:for="{{json.pkg_list}}">
+    <view class='order-title-view'>
+      <text>包裹{{item.pkg_id}}</text>
+    </view>
+    <view class='order-commodity'>
+      <view class='confirmorder-view'>
+        <scroll-view scroll-x='true'>
+          <view class='confirmorder-scroll-view'>
+            <view class='brand' wx:for="{{item.product_list}}" wx:for-item="product">
+              <image class='confirmorder-scroll-view-item' src='{{product.product_img}}' mode='aspectFit' data-items='{{item}}'></image>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class='order-commodity-item'>
+        <text class='button-text'>共{{item.product_count}}件</text>
+        <image class='button-image' src='/pages/images/seckillcommodityicon.png' mode='aspectFill'></image>
+      </view>
+    </view>
+    <view class='order-title-view'>
+      <view class='order-button-view'>
+        <text wx:if="{{item.status==0}}">未付款</text>
+        <text wx:if="{{item.status==1}}">待发货</text>
+        <text wx:if="{{item.status==2}}">待收货</text>
+        <text wx:if="{{item.status==3}}">已收货</text>
+        <text wx:if="{{item.status==-1}}">已取消</text>
+        <text wx:if="{{item.status==-3}}">已退款</text>
+        <text wx:if="{{item.status==-5}}">退款处理中</text>
+        <!-- <button class='order-button'>去支付</button> -->
+      </view>
+      <view class='pay-view'>
+        <text style='color:rgba(230,187,118,1);' bindtap='toLogistics'  data-item='{{item}}'>查看物流信息</text>
+      </view>
+    </view>
+  </view>
+  <view class='fillnblock'></view>
+</view>

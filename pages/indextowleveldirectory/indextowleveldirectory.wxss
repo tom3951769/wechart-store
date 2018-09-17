@@ -1,0 +1,150 @@
+/* pages/indextowleveldirectory/indextowleveldirectory.wxss */
+@import '../index/index.wxss';
+.body
+{
+  font-size:30rpx;
+  font-family:PingFang-SC-Heavy;
+  color:rgba(35,35,33,1);
+}
+.health-image {
+  margin-top:5%; 
+  height: 380rpx;
+  width: 100%;
+}
+.newswiper {
+  margin-top: 56rpx;
+  height: 400rpx;
+  width: 100%;
+  text-align: center;
+}
+.newprice {
+  width: 88rpx;
+  height: 20rpx;
+  font-size: 28rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(35,35,33,1);
+  line-height: 30px;
+}
+
+.newimage {
+  width: 210rpx;
+  height: 210rpx;
+}
+
+.newtext {
+  width: 200rpx;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Medium;
+  color: rgba(102, 102, 102, 1);
+  line-height: 28rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.newcommodity {
+  padding-left: 23rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.newmodule {
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+.newicon {
+  padding-left: 8rpx;
+  padding-bottom: 8rpx;
+  width: 10rpx;
+  height: 14rpx;
+}
+
+.newlabel2 {
+  margin-left: 12rpx;
+  margin-top: 32rpx;
+  width: 206rpx;
+  height: 12rpx;
+  font-size: 32rpx;
+  font-family: ArialMT;
+  color: rgba(178, 178, 178, 1);
+  word-spacing: 3rpx;
+}
+
+.newlabel1 {
+  margin-top: 32rpx;
+  width: 206rpx;
+  height: 12rpx;
+  font-size: 32rpx;
+  font-family: ArialMT;
+  color: rgba(178, 178, 178, 1);
+  word-spacing: 6rpx;
+}
+
+.newlabel {
+  width: 94rpx;
+  height: 23rpx;
+  font-size: 24px;
+  font-family: PingFang-SC-Medium;
+  color: rgba(35, 35, 33, 1);
+  line-height: 28rpx;
+}
+
+.newview {
+  padding-top: 68rpx;
+  text-align: center;
+}
+
+.hot-name
+{
+  margin-left:20rpx; 
+  font-size:30rpx;
+  font-family:PingFang-SC-Heavy;
+  color:rgba(35,35,33,1);
+}
+.hot-icon
+{
+  width: 26rpx;
+  height: 33rpx;
+}
+.hot-view-bg
+{
+  height: 100%;
+}
+.hot-view
+{
+  margin-top: 5%;
+  margin-left:5%; 
+  margin-right:5%;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-between;
+}
+.hot-row-view
+{
+  float: left;
+  left: 0;
+}
+
+.querybuttom
+{
+  float: right;
+  right: 0;
+  width: 142rpx;
+  height: 42rpx;
+  font-size:22rpx;
+  font-family:PingFang-SC-Medium;
+  color:rgba(230,187,118,1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 0;
+  border: 2rpx solid #F7EAD6;
+}

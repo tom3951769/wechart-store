@@ -1,0 +1,59 @@
+<!--pages/bare/bare.wxml-->
+<view>
+  <view class='time_view' wx:if="{{list.status==0}}">
+    <text>剩余</text>
+    <view class='time_style'>{{list.hour}}</view>:
+    <view class='time_style'>{{list.minute}}</view>:
+    <view class='time_style'>{{list.second}}</view>
+    <text>结束</text>
+  </view>
+  <view class='time_view' wx:if="{{list.status==1}}">
+    <text>好友已完成任务，可以下单啦</text>
+  </view>
+  <view class='time_view' wx:if="{{list.status==2}}">
+    <text>好友已完成任务，已下单购买</text>
+  </view>
+  <view class='time_view' wx:if="{{list.status==3}}">
+    <text>已过下单有效期</text>
+  </view>
+  <view class='time_view' wx:if="{{list.status==-99}}">
+    <text>活动未开始</text>
+  </view>
+  <view class='product_topView'>
+    <image class='product_image' src='{{list.product_img}}' mode='aspectFit'></image>
+    <view class='product_content_topView'>
+      <text class='product_title'>{{list.product_title}}</text>
+      <view class='product_bottom'>
+        <view>
+          <text class='product_money'>￥{{list.bare_price}}</text>
+          <text class='product_delet'>￥{{list.price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <text class='title_text'>关注微信公众号好友助力，自己也可以裸价购买哦~</text>
+  <button class='goZhuli' open-type='getUserInfo' bindgetuserinfo='goHelp'>去助力</button>
+  <view class='classify-view'>
+    <searchcommodity-item items='{{list.product_list}}' bindClick="onClick" />
+  </view>
+  <view class='bottom_view'>
+    <view class='bottom_item'>
+      <text class='bottom_text1'>遇见海淘</text>
+      <text class='bottom_text2'>100%美国直邮100%正品</text>
+      <view class='paddingView'></view>
+      <button class='goPay3' bindtap='goHome'>进入首页</button>
+    </view>
+    <view class='bottom_item2'>
+      <text class='bottom_text1'>助力专享购</text>
+      <text class='bottom_text2'>专享价购买直邮商品</text>
+      <view class='paddingView'></view>
+      <button class='goPay3' bindtap='goCampaign '>参加活动</button>
+    </view>
+    <view class='bottom_item'>
+      <text class='bottom_text1'>助力专享区</text>
+      <text class='bottom_text2'>更多您意想不到的低价</text>
+      <view class='paddingView'></view>
+      <button class='goPay3' bindtap='goShareModule'>查看更多</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+/* pages/coupon/coupon.wxss */
+.flaot-container{
+  display: flex;
+  flex-direction: column;
+}
+.coupoms-view
+{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+}
+.coupoms-image
+{
+
+  margin: 5% auto 0 auto;
+ height: 250rpx;
+}
+

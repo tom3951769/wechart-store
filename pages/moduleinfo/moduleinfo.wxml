@@ -1,0 +1,5 @@
+<view class="flaot-container">
+  <view class='classify-view'>
+    <searchcommodity-item items='{{list}}' bindClick="onClick" />
+  </view>
+</view>
