@@ -24,9 +24,30 @@ Page({
     cash_coupon_code: null,
     isuse_coupon: true,
     isuse_cach_coupon: true,
+    help_id:null,
   },
   immeBuy: function(e) {
     var that = this
+    var help_id = that.data.help_id
+    var address_id = that.data.json.address_id
+    if (help_id != null && address_id!=null)
+    {
+      wx.request({
+        url: 'https://efreshness.cn/overseas_server_test/mp/bare_order_submit?help_id=' + help_id + '&address_id=' + address_id,
+        header: {
+          s: app.globalData.userInfo.session
+        },
+        method: 'POST',
+        success(res) {
+          if (res.data.code == 0) {
+            wx.navigateTo({
+              url: '/pages/pay/pay?json=' + JSON.stringify(res.data),
+            })
+          }
+        }
+      })
+      return
+    }
     if (that.data.coupon_code != null && that.data.cash_coupon_code == null) {
       wx.request({
         url: 'https://efreshness.cn/overseas_server_test/mp/order_submit',
@@ -391,6 +412,7 @@ Page({
       header: {
         s: app.globalData.userInfo.session
       },
+      method:'POST',
       success(res) {
         if (res.data.code == 0) {
           var order_info = {
@@ -404,8 +426,6 @@ Page({
             }
             order_info.order_list.push(product)
           }
-          that.getVoucher(order_info)
-          that.getCoupon(order_info)
           that.setData({
             json: res.data
           })
@@ -425,6 +445,11 @@ Page({
         this.data.order_info = options.order_info
       }
       if (options.help_id != null) {
+        this.setData(
+          {
+            help_id: options.help_id
+          }
+        )
         this.gethelpOrder(options.help_id)
       }
     }

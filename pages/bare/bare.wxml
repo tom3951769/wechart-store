@@ -32,7 +32,8 @@
     </view>
   </view>
   <text class='title_text'>关注微信公众号好友助力，自己也可以裸价购买哦~</text>
-  <button class='goZhuli' open-type='getUserInfo' bindgetuserinfo='goHelp'>去助力</button>
+  <button class='goZhuli' open-type='getUserInfo' bindgetuserinfo='goHelp'  wx:if="{{list.status==0}}">去助力</button>
+  <button class='goZhuli' open-type='getUserInfo' disabled='true' bindgetuserinfo='goHelp' wx:if="{{list.is_helped==1}}" >已助力</button>
   <view class='classify-view'>
     <searchcommodity-item items='{{list.product_list}}' bindClick="onClick" />
   </view>

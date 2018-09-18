@@ -26,6 +26,6 @@
     </view>
   </view>
   <view class='commodity-item-view'>
-    <commodity-item items="{{list.list}}" bindtabclick="clickTab" />
+    <commodity-item items="{{list.list}}" bindtabclick="clickTab" bindgoPay="goPay" />
   </view>
 </view>

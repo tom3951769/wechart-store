@@ -24,7 +24,7 @@ Page({
   },
   gobare(e) {
     wx.navigateTo({
-      url: '/pages/bare/bare?id=' + 517,
+      url: '/pages/bare/bare?id=' + 524,
     })
   }
 ,

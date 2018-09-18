@@ -8,15 +8,18 @@ Page({
    */
   data: {
     list: null,
-    help_id:null,
+    help_id: null,
   },
-  getdata(id, code) {
+  getdata(id) {
     var that = this;
+    var code = app.globalData.userInfo.logincode
+    var openid = app.globalData.userInfo.openid
+    var unionid = app.globalData.userInfo.unionid
     wx.showLoading({
       title: '加载中',
     })
     wx.request({
-      url: 'https://efreshness.cn/overseas_server_test/mp/query_barehelp_share_info?help_id=' + id + '&code=' + code,
+      url: 'https://efreshness.cn/overseas_server_test/mp/query_barehelp_share_info?help_id=' + id + '&code=' + code + '&openid=' + openid + '&unionid=' + unionid,
       header: {
         s: app.globalData.userInfo.session
       },
@@ -48,59 +51,68 @@ Page({
   onLoad: function(options) {
     if (options != null) {
       if (options.id != null) {
-        this.setData(
-          {
-            help_id: options.id
-          }
-        )
-        this.login().then((res) => {
-          this.getdata(options.id, res)
-        }).catch((res) => {
-          console.log('登陆失败')
-        });
+        this.setData({
+          help_id: options.id
+        })
+        this.getdata(options.id)
       }
     }
   },
-  login() {
-    return new Promise(function(resolve, reject) {
-      // 登录
-      wx.login({
-        success: res => {
-          var code = res.code;
-          if (code != null) {
-            var data = app.globalData;
-            var l = 'https://api.weixin.qq.com/sns/jscode2session?appid=' + data.appid + '&secret=' + data.secret + '&js_code=' + code + '&grant_type=authorization_code';
-            wx.request({
-              url: l,
-              method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT  
-              success: function(res) {
-                var jscode2session = res.data;
-                wx.setStorageSync('jscode2session', jscode2session); //存储openid  
-                resolve(code);
-              }
-            })
-          }
-        }
-      })
-    })
-  },
   goHelp(e) {
     var that = this
+    // if (that.data.list.subscribe == 0) {
+    //   wx.showModal({
+    //     title: '提示',
+    //     content: '未关注公众号，先关注公众号在来助力哦。',
+    //     success(res)
+    //     {
+    //       if (res.confirm) {
+    //         wx.previewImage({
+    //           urls: [that.data.list.qr_img],
+    //         })
+    //       }
+    //     }
+    //   })
+    //   return
+    // }
+    if (that.data.list.is_helped == 1) {
+      wx.showModal({
+        title: '提示',
+        content: '已助力过，不可重复助力',
+        showCancel:false,
+      })
+      return
+    }
     let userinfo_json = {}
     let userinfo = e.detail.userInfo
-    let jscode2session = wx.getStorageSync('jscode2session')
     let help_id = that.data.help_id
-    userinfo_json.openid = jscode2session.openid
-    userinfo_json.unionid = jscode2session.unionid
+    userinfo_json.openid = app.globalData.userInfo.openid
+    userinfo_json.unionid = app.globalData.userInfo.unionid
     userinfo_json.headimgurl = userinfo.avatarUrl
     userinfo_json.nickname = userinfo.nickName
     wx.request({
       url: 'https://efreshness.cn/overseas_server_test/mp/barehelp_submit?help_id=' + help_id + '&userinfo_json=' + JSON.stringify(userinfo_json),
       success(res) {
-        if (res.data.code == 0) {}
+        if (res.data.code == 0) {
+          wx.showToast({
+            title: '助力成功',
+          })
+          that.getdata(help_id)
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '助力失败，系统错误',
+            showCancel:false,
+          })
+        }
       },
       fail(res) {
-
+        wx.showModal({
+          title: '提示',
+          content: '系统错误，助力失败',
+          showCancel: false,
+        })
+        console.log('系统错误，助力失败：' + res)
       }
     })
   },

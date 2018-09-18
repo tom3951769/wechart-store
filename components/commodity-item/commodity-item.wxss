@@ -4,9 +4,11 @@
   margin-top:5%; 
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .mylikecommodityinfo-button
 {
+  right: 34rpx;
   height: 46rpx;
   width:134rpx;
   font-size:26rpx;
@@ -17,6 +19,10 @@
   display:flex;
   flex-direction: column;
   justify-content: center;
+}
+.mylikecommodityinfo-button::after
+{
+  border-radius: 0;
 }
 .mylikecommodityinfo-view
 {

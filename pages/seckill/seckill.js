@@ -15,29 +15,7 @@ Page({
     title: '模块页面',
     type_number: 0,
     type_id: null,
-
-    tabs: [{
-        id: '0',
-        url: '/pages/images/commodityinfobgimage.jpg',
-        name: 'YUZHAOLIN 儿童短袖套装女童T桖短裤薄款裙装',
-        price: '219',
-        originalprice: '299',
-        buttonicon: '',
-        count: '12',
-        isbutton: true
-      },
-      {
-        id: '0',
-        url: '/pages/images/commodityinfobgimage.jpg',
-        name: 'YUZHAOLIN 儿童短袖套装女童T桖短裤薄款裙装',
-        price: '219',
-        originalprice: '299',
-        buttonicon: '',
-        count: '12',
-        isbutton: true
-      },
-
-    ],
+    tabs: [],
     seckilldata: {
       id: '',
       title: '',
@@ -58,7 +36,7 @@ Page({
         wx.setNavigationBarTitle({
           title: options.title //页面标题为路由参数
         })
-        this.query_flashsale_module_product_list(this.data.type_id , 1, this.data.loadcount, 0)
+        this.query_flashsale_module_product_list(this.data.type_id, 1, this.data.loadcount, 0)
       }
     }
   },
@@ -93,7 +71,12 @@ Page({
     })
 
   },
-
+  goPay(e) {
+    var item = e.detail.item
+    wx.navigateTo({
+      url: '/pages/commodityinfo/commodityinfo?id=' + item.product_id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -141,7 +124,7 @@ Page({
     var type_number = that.data.type_number;
     if (currentcount < totalcount) {
       var pageindex = parseInt(((loadcount + currentcount) / loadcount));
-      that.query_flashsale_module_product_list(type_id, pageindex, loadcount,1)
+      that.query_flashsale_module_product_list(type_id, pageindex, loadcount, 1)
     }
   },
 

@@ -204,7 +204,6 @@ page {
 
 .user_icon2 {
   border-radius: 50%;
-  background-color: red;
   width: 80rpx;
   height: 80rpx;
   margin-top: 5rpx;

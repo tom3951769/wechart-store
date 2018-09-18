@@ -3,8 +3,12 @@
     <view class='wecharticon-view'>
       <image class='wechart-bg' src='/pages/images/myselfbg.png' mode='aspectFill'></image>
       <view class='userinfo-view'>
-        <image class='wecharticon-image' src='{{userinfo.avatarUrl}}'></image>
-        <label class='wechartname-label'>{{userinfo.nickName}}</label>
+        <view class='wecharticon-image'>
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <open-data class='wechartname-label' type="userNickName"></open-data>
+        <!-- <image class='wecharticon-image' src='{{userinfo.avatarUrl}}'></image>
+        <label class='wechartname-label'>{{userinfo.nickName}}</label> -->
       </view>
       <!-- <image class='wechartsetting-image' bindtap='toSetting' src='/pages/images/myselfsettingicon.png' mode='aspectFill'></image> -->
     </view>

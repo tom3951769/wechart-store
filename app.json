@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/text/text",
     "pages/index/index",
+    "pages/text/text",
     "pages/mylikes/mylikes",
     "components/coupon-item-bottom/coupon-item-bottom",
     "pages/orderinfo/orderinfo",

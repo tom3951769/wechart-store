@@ -96,6 +96,7 @@ function login() {
               //登陆成功
               if (e.data.code == 0) {
                 let result = e.data;
+                result.logincode = code
                 resolve(result);
               }
             },

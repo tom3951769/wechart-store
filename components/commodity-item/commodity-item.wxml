@@ -18,12 +18,16 @@
             <image class='mylikecommodityinfo-icon' src='{{item.buttonicon}}' mode='aspectFill'></image>
           </view>
           <view class="mylikecommodityinfo-button-view">
-            <text style='font-size: 26rpx;color: #A0A0A0;' wx:if="{{item.surplus_count==0}}">已抢完</text>
-            <text style='font-size: 26rpx;color: #A0A0A0;' wx:else>仅剩{{item.surplus_count}}件</text>
-            <button  class='mylikecommodityinfo-button' >马上抢</button>
+            <view>
+              <text style='font-size: 26rpx;color: #A0A0A0;' wx:if="{{item.surplus_count==0}}">已抢完</text>
+              <text style='font-size: 26rpx;color: #A0A0A0;' wx:else>仅剩{{item.surplus_count}}件</text>
+            </view>
+            <view>
+              <button class='mylikecommodityinfo-button' bindtap='goPay' data-item="{{item}}" >马上抢</button>
+            </view>
           </view>
         </view>
       </view>
-      </block>
+    </block>
   </scroll-view>
 </view>

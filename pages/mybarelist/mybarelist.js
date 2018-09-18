@@ -87,7 +87,20 @@ Page({
       }
     })
   },
-
+  goMybare(e)
+  {
+    var product_id = e.currentTarget.dataset.item.product_id 
+    wx.navigateTo({
+      url: '/pages/mybare/mybare?id=' + product_id,
+    })
+  },
+  goPayTap(e)
+  {
+    var help_id = e.currentTarget.dataset.item.help_id
+    wx.navigateTo({
+      url: '/pages/confirmorder/confirmorder?help_id=' + help_id,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

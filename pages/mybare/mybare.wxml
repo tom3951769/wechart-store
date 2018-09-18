@@ -33,7 +33,7 @@
   <scroll-view scroll-x="true">
     <view class='iconScrollerView'>
       <view class='icon_margin' wx:for="{{list.frend_list}}">
-        <image class='user_icon' src='' mode='aspectFit'></image>
+        <image class='user_icon' src='{{item.headimgurl}}' mode='aspectFit' wx:if="{{item.nickname!=''}}"></image>
       </view>
     </view>
   </scroll-view>
